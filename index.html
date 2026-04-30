@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陪您基金會 PéiNín Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --red:       #C0392B;
+      --red-light: #E74C3C;
+      --gold:      #C9973A;
+      --gold-light:#F0C060;
+      --cream:     #FAF6EF;
+      --paper:     #F3EDE2;
+      --ink:       #1A1208;
+      --ink-mid:   #3D2B10;
+      --ink-soft:  #6B4F2E;
+      --white:     #FFFDF9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif TC', 'Lora', serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(250,246,239,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,151,58,0.25);
+    }
+    .nav-brand {
+      font-size: 1.2rem; font-weight: 700; color: var(--red);
+      letter-spacing: 0.05em; text-decoration: none;
+    }
+    .nav-brand span { color: var(--gold); font-weight: 300; margin-left: 0.4rem; font-family: 'Lora', serif; font-style: italic; font-size: 1rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--ink-mid); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--red); color: var(--white);
+      padding: 0.5rem 1.3rem; border-radius: 2px;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--red-light); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 8rem 2.5rem 5rem;
+      background: var(--white);
+    }
+    .hero::before {
+      content: '陪';
+      position: absolute; right: -0.1em; top: 50%; transform: translateY(-50%);
+      font-size: clamp(18rem, 35vw, 42rem);
+      font-weight: 900; color: rgba(192,57,43,0.045);
+      line-height: 1; pointer-events: none; user-select: none;
+      font-family: 'Noto Serif TC', serif;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1.8rem;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; display: block; width: 2rem; height: 1px; background: var(--gold);
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900; line-height: 1.1;
+      color: var(--ink); margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em { font-style: normal; color: var(--red); }
+    .hero-subtitle {
+      font-family: 'Lora', serif; font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      color: var(--ink-soft); margin-bottom: 2.4rem;
+      font-weight: 400;
+    }
+    .hero-desc {
+      max-width: 560px; font-size: 1rem; color: var(--ink-mid);
+      margin-bottom: 3rem; line-height: 2;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--red); color: var(--white);
+      padding: 0.9rem 2.2rem; border-radius: 2px;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+      font-family: 'Noto Serif TC', serif;
+    }
+    .btn-primary:hover { background: var(--red-light); transform: translateY(-1px); }
+    .btn-secondary {
+      border: 1.5px solid var(--gold); color: var(--gold);
+      padding: 0.9rem 2.2rem; border-radius: 2px;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em;
+      text-decoration: none; transition: all 0.2s;
+      font-family: 'Noto Serif TC', serif;
+    }
+    .btn-secondary:hover { background: var(--gold); color: var(--white); }
+    .hero-seal {
+      position: absolute; right: 8%; bottom: 12%;
+      width: clamp(100px, 14vw, 180px);
+      opacity: 0.12; pointer-events: none;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--gold) 50%, var(--red) 100%);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 5rem 2.5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem; letter-spacing: 0.2em; font-weight: 700;
+      text-transform: uppercase; color: var(--red);
+      border-top: 2px solid var(--red); padding-top: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem;
+      color: var(--ink);
+    }
+    .section-title em { font-style: normal; color: var(--red); }
+    .section-lead { font-size: 1.05rem; color: var(--ink-soft); max-width: 680px; line-height: 2; }
+
+    /* ── PROBLEM ── */
+    .problem { background: var(--ink); color: var(--white); }
+    .problem .section-tag { color: var(--gold); border-color: var(--gold); }
+    .problem .section-title { color: var(--white); }
+    .problem .section-lead { color: rgba(255,255,255,0.65); }
+    .problem-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5px; margin-top: 3.5rem;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08);
+    }
+    .problem-card {
+      background: var(--ink); padding: 2.5rem;
+      transition: background 0.2s;
+    }
+    .problem-card:hover { background: #241a0c; }
+    .problem-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .problem-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 0.7rem; }
+    .problem-card p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.9; }
+    .problem-stat {
+      margin-top: 3rem; padding: 2rem 2.5rem;
+      border-left: 3px solid var(--red);
+      background: rgba(192,57,43,0.08);
+    }
+    .problem-stat strong { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--red); display: block; }
+    .problem-stat span { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+    /* ── SOLUTION ── */
+    .solution { background: var(--paper); }
+    .solution-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; }
+    .solution-card {
+      background: var(--white); padding: 2.5rem 2rem;
+      border-top: 3px solid transparent;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .solution-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .solution-icon { font-size: 2.4rem; margin-bottom: 1.2rem; display: block; }
+    .solution-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.7rem; }
+    .solution-card p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.9; }
+    .solution-card .zh { font-size: 0.78rem; color: var(--gold); font-weight: 600; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+
+    /* ── WHO WE SERVE ── */
+    .serve { background: var(--white); }
+    .serve-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3.5rem; align-items: start; }
+    .serve-card { padding: 2.5rem; border: 1px solid rgba(201,151,58,0.3); position: relative; }
+    .serve-card::before {
+      content: attr(data-zh);
+      position: absolute; top: -1rem; left: 1.5rem;
+      background: var(--white); padding: 0 0.6rem;
+      font-size: 0.75rem; color: var(--gold); font-weight: 700; letter-spacing: 0.1em;
+    }
+    .serve-emoji { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+    .serve-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.8rem; }
+    .serve-card p { font-size: 0.92rem; color: var(--ink-soft); line-height: 2; }
+
+    /* ── MISSION ── */
+    .mission {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+    }
+    .mission .section-tag { color: var(--gold-light); border-color: var(--gold-light); }
+    .mission .section-title { color: var(--white); max-width: 700px; margin: 0 auto 1.5rem; }
+    .mission-quote {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-family: 'Lora', serif; font-style: italic;
+      color: rgba(255,255,255,0.85); max-width: 700px;
+      margin: 0 auto 2rem; line-height: 2;
+    }
+    .mission-zh {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: rgba(255,255,255,0.7); margin-top: 1rem;
+      line-height: 2;
+    }
+
+    /* ── INVOLVE ── */
+    .involve { background: var(--paper); }
+    .involve-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3.5rem; }
+    .involve-card {
+      padding: 2.5rem 2rem; background: var(--white);
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.25s;
+      text-align: center;
+    }
+    .involve-card:hover { border-color: var(--gold); }
+    .involve-card .ic-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+    .involve-card h3 { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.6rem; }
+    .involve-card p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.9; margin-bottom: 1.2rem; }
+    .involve-card a {
+      font-size: 0.82rem; font-weight: 700; color: var(--red);
+      letter-spacing: 0.08em; text-decoration: none;
+      border-bottom: 1px solid var(--red); padding-bottom: 1px;
+    }
+    .involve-card a:hover { color: var(--gold); border-color: var(--gold); }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: center; }
+    .about-zh-block {
+      padding: 3rem 2rem;
+      border: 1px solid rgba(201,151,58,0.3);
+      background: var(--paper);
+      text-align: center;
+    }
+    .about-zh-block .big-zh {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 900; color: var(--red);
+      line-height: 1.2; display: block; margin-bottom: 0.5rem;
+    }
+    .about-zh-block .pinyin {
+      font-family: 'Lora', serif; font-style: italic;
+      color: var(--gold); font-size: 1.3rem;
+    }
+    .about-zh-block .meaning {
+      font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.8rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .about-text p { font-size: 0.95rem; color: var(--ink-soft); line-height: 2.1; margin-bottom: 1.2rem; }
+    .about-text strong { color: var(--ink); }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--ink); color: var(--white); text-align: center; }
+    .contact .section-tag { color: var(--gold); border-color: var(--gold); }
+    .contact .section-title { color: var(--white); }
+    .contact-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem; }
+    .contact-item { }
+    .contact-item .ci-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.4rem; display: block; }
+    .contact-item a { color: var(--white); text-decoration: none; font-size: 0.95rem; }
+    .contact-item a:hover { color: var(--gold); }
+    .contact-item span.plain { color: rgba(255,255,255,0.6); font-size: 0.95rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0e0b06; color: rgba(255,255,255,0.35);
+      text-align: center; padding: 2rem;
+      font-size: 0.78rem; letter-spacing: 0.05em; line-height: 2;
+    }
+    footer a { color: var(--gold); opacity: 0.7; text-decoration: none; }
+
+    /* ── FADE-IN ANIMATION ── */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .problem-grid,
+      .solution-grid,
+      .serve-grid,
+      .involve-grid,
+      .about-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero::before { font-size: 55vw; right: -0.05em; }
+      section { padding: 4rem 1.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" href="#">陪您基金會 <span>PéiNín Foundation</span></a>
+    <ul class="nav-links">
+      <li><a href="#problem">問題</a></li>
+      <li><a href="#solution">解決方案</a></li>
+      <li><a href="#mission">使命</a></li>
+      <li><a href="#about">關於我們</a></li>
+    </ul>
+    <a class="nav-cta" href="mailto:info@peininfoundation.org">聯絡我們</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow fade-up">陪您基金會 · PéiNín Foundation · 非牟利機構</div>
+      <h1 class="fade-up" style="transition-delay:0.1s">
+        讓長輩<br/><em>不再孤單</em>
+      </h1>
+      <p class="hero-subtitle fade-up" style="transition-delay:0.2s">
+        No More Isolation for Our Elders
+      </p>
+      <p class="hero-desc fade-up" style="transition-delay:0.3s">
+        PéiNín Foundation 以人工智能科技，陪伴在美華裔長輩，打破語言障礙，守護安全，讓每一位長輩都能以自己的語言與文化，尊嚴地生活。
+        <br/><br/>
+        <em style="font-style:normal;color:var(--ink-soft);font-size:0.88rem">We build AI-powered technology so Chinese American seniors stay safe, connected, and independent — in the language they call home.</em>
+      </p>
+      <div class="hero-actions fade-up" style="transition-delay:0.4s">
+        <a class="btn-primary" href="mailto:info@peininfoundation.org">聯絡我們 · Contact Us</a>
+        <a class="btn-secondary" href="#mission">了解使命 · Our Mission</a>
+      </div>
+    </div>
+
+    <!-- Decorative seal SVG -->
+    <svg class="hero-seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="96" fill="none" stroke="#C0392B" stroke-width="3"/>
+      <circle cx="100" cy="100" r="82" fill="none" stroke="#C0392B" stroke-width="1"/>
+      <text x="100" y="88" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="34" fill="#C0392B">陪您</text>
+      <text x="100" y="118" text-anchor="middle" font-family="Noto Serif TC" font-size="11" fill="#C0392B" letter-spacing="3">基金會</text>
+      <text x="100" y="140" text-anchor="middle" font-family="serif" font-size="9" fill="#C0392B" letter-spacing="2">FOUNDATION</text>
+      <path d="M 40 155 Q 100 175 160 155" fill="none" stroke="#C0392B" stroke-width="1.5"/>
+    </svg>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROBLEM -->
+  <section class="problem" id="problem">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-tag">問題所在 · The Problem</span>
+        <h2 class="section-title">被科技遺忘的一代</h2>
+        <p class="section-lead">A Generation Left Behind by Technology</p>
+      </div>
+
+      <div class="problem-stat fade-up" style="transition-delay:0.1s; margin-top:2.5rem">
+        <strong>600,000+</strong>
+        <span>在美華裔長輩，面對著語言、文化與科技的三重障礙。<br/>Chinese American seniors in the US — shut out by language, culture, and technology.</span>
+      </div>
+
+      <div class="problem-grid fade-up" style="transition-delay:0.2s; margin-top:2rem">
+        <div class="problem-card">
+          <div class="problem-icon">🌐</div>
+          <h3>語言障礙 · Language Barrier</h3>
+          <p>現有的智能助理 —— Siri、Alexa、Google —— 均以英語為主，無法真正服務以中文為母語的長輩。日常生活中的每一個問題，都變成了不可跨越的障礙。</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🏠</div>
+          <h3>文化孤立 · Cultural Isolation</h3>
+          <p>語言不通令長輩難以融入社區，與家人疏離，精神健康每況愈下。孤獨，是許多在美華裔長輩每天面對的現實。</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🚨</div>
+          <h3>安全風險 · Safety Risks</h3>
+          <p>緊急求助時，長輩無法用英語與急救人員溝通。現有的緊急求助系統，從未為語言障礙人士而設計。</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📵</div>
+          <h3>科技缺口 · Technology Gap</h3>
+          <p>Life Alert、ElliQ 等現有解決方案，無一同時結合中文支援、美國本地情境、長者友善設計與緊急安全功能。市場上存在真正的空白。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SOLUTION -->
+  <section class="solution" id="solution">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-tag">解決方案 · Our Solution</span>
+        <h2 class="section-title">陪您 — <em>以您的語言，守護您</em></h2>
+        <p class="section-lead">PéiNín is a Chinese-language AI companion app designed specifically for Chinese American seniors. Built with love. Built for safety.</p>
+      </div>
+
+      <div class="solution-grid fade-up" style="transition-delay:0.15s">
+        <div class="solution-card">
+          <span class="zh">語言陪伴</span>
+          <span class="solution-icon">🗣️</span>
+          <h3>說您的語言 · Speaks Their Language</h3>
+          <p>全中文對話，無需英語。長輩可以自然地提問、聊天、獲取幫助，感受真正被聆聽的溫暖。Full Mandarin conversation — no English required.</p>
+        </div>
+        <div class="solution-card">
+          <span class="zh">緊急求助</span>
+          <span class="solution-icon">🚨</span>
+          <h3>一鍵緊急求助 · One-Touch SOS</h3>
+          <p>緊急時按下SOS，立即通知家人。我們的系統橋接了語言障礙，讓長輩在最需要的時候得到最快的幫助。Instantly alerts family in an emergency.</p>
+        </div>
+        <div class="solution-card">
+          <span class="zh">日常關懷</span>
+          <span class="solution-icon">🌅</span>
+          <h3>每日健康問候 · Daily Wellness Check-in</h3>
+          <p>每天早晨，陪您主動問候長輩。若長輩30分鐘內未回應，家人將自動收到通知。讓家人安心，讓長輩自在。Quiet peace of mind for the whole family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="serve" id="serve">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-tag">服務對象 · Who We Serve</span>
+        <h2 class="section-title">為您而建</h2>
+      </div>
+      <div class="serve-grid fade-up" style="transition-delay:0.15s">
+        <div class="serve-card" data-zh="長輩 · Seniors">
+          <span class="serve-emoji">👴👵</span>
+          <h3>華裔長輩 · Chinese American Seniors</h3>
+          <p>說普通話的長輩，希望在美國保持獨立、與家人保持聯繫，並在不需要英語的情況下，安全地生活每一天。<br/><br/>Mandarin-speaking elders who want to stay independent, connected, and safe — without navigating a foreign language every day.</p>
+        </div>
+        <div class="serve-card" data-zh="家人 · Families">
+          <span class="serve-emoji">👨‍👩‍👧</span>
+          <h3>家人與照顧者 · Their Families</h3>
+          <p>擔心獨居父母的子女與照顧者，希望有一個值得信賴、文化相融的解決方案，時刻守護父母的安全。<br/><br/>Adult children and caregivers who worry about a parent living alone — and want a culturally familiar solution watching over them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission" id="mission">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-tag">我們的使命 · Our Mission</span>
+        <h2 class="section-title">我們為何而存在</h2>
+      </div>
+      <p class="mission-quote fade-up" style="transition-delay:0.15s">
+        "Every elder deserves care, dignity, and connection — regardless of what language they speak."
+      </p>
+      <p class="mission-zh fade-up" style="transition-delay:0.2s">
+        每一位長輩，都值得被關愛、被尊重、被陪伴——<br/>無論他們說什麼語言。
+      </p>
+      <div class="fade-up" style="transition-delay:0.25s; margin-top:2.5rem">
+        <p style="color:rgba(255,255,255,0.75); max-width:640px; margin:0 auto; font-size:0.95rem; line-height:2.1">
+          PéiNín Foundation 是一家加州非牟利機構，致力於縮小移民長輩在美國所面臨的科技鴻溝。我們由社區支持，為社區而生，矢志打造一個沒有華裔長輩需要獨自面對危機的未來。
+          <br/><br/>
+          <em style="font-style:normal; font-size:0.85rem; color:rgba(255,255,255,0.55)">PéiNín Foundation is a California nonprofit dedicated to closing the technology gap for immigrant seniors in America. Community-funded, community-driven.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section class="involve" id="involve">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-tag">參與我們 · Get Involved</span>
+        <h2 class="section-title">加入我們的使命</h2>
+        <p class="section-lead">Join Our Mission — Together We Can Make a Difference</p>
+      </div>
+      <div class="involve-grid fade-up" style="transition-delay:0.15s">
+        <div class="involve-card">
+          <span class="ic-icon">📬</span>
+          <h3>保持聯繫 · Stay Informed</h3>
+          <p>我們正處於早期開發階段。歡迎聯絡我們，搶先了解陪您的最新消息。<br/><em style="font-style:normal;font-size:0.82rem;color:var(--ink-soft)">We're in early development. Be the first to know when PéiNín launches.</em></p>
+          <a href="mailto:hello@peininfoundation.org">hello@peininfoundation.org</a>
+        </div>
+        <div class="involve-card">
+          <span class="ic-icon">💛</span>
+          <h3>支持我們 · Support Our Work</h3>
+          <p>您的捐助，幫助我們將陪您帶給最需要的長輩。<br/><em style="font-style:normal;font-size:0.82rem;color:var(--ink-soft)">Your donation helps us build and bring PéiNín to seniors who need it most.</em></p>
+          <a href="mailto:info@peininfoundation.org">聯絡捐助事宜</a>
+        </div>
+        <div class="involve-card">
+          <span class="ic-icon">🏛️</span>
+          <h3>合作夥伴 · Partner With Us</h3>
+          <p>歡迎長者中心、社區組織及醫療機構與我們合作。<br/><em style="font-style:normal;font-size:0.82rem;color:var(--ink-soft)">We welcome partnerships with senior centers, community organizations, and healthcare providers.</em></p>
+          <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner about-inner">
+      <div class="fade-up">
+        <div class="about-zh-block">
+          <span class="big-zh">陪您</span>
+          <span class="pinyin">PéiNín</span>
+          <p class="meaning">With You · 陪伴於您身旁</p>
+        </div>
+      </div>
+      <div class="about-text fade-up" style="transition-delay:0.15s">
+        <span class="section-tag">關於我們 · About Us</span>
+        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2.2rem)">我們是誰</h2>
+        <p>
+          <strong>PéiNín Foundation 由一群在美華裔創立</strong>，我們親眼目睹了自己的家人在孤立、語言障礙與安全憂慮中掙扎。我們是技術人員、照顧者，也是社區倡導者——因共同的信念而聚在一起：我們的長輩，值得更好的生活。
+        </p>
+        <p>
+          We are technologists, caregivers, and community advocates — united by a shared belief that our elders deserve better. Founded by Chinese Americans who witnessed firsthand the struggles of isolation and language barriers.
+        </p>
+        <p>
+          我們的總部位於<strong>舊金山灣區</strong>，致力服務全美的華裔社區。<br/>
+          <em style="font-style:normal;font-size:0.88rem;color:var(--ink-soft)">Based in the San Francisco Bay Area, proudly serving the greater Chinese American community across the United States.</em>
+        </p>
+        <p style="margin-top:1.5rem; padding:1.2rem 1.5rem; border-left:3px solid var(--gold); background:var(--paper); font-size:0.88rem; color:var(--ink-soft)">
+          🏛️ <strong>加州非牟利機構</strong> · California Nonprofit Corporation · 501(c)(3) 申請中 · 501(c)(3) Pending
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-tag">聯絡我們 · Contact</span>
+        <h2 class="section-title">與我們取得聯繫</h2>
+      </div>
+      <div class="contact-grid fade-up" style="transition-delay:0.1s">
+        <div class="contact-item">
+          <span class="ci-label">一般查詢 · General</span>
+          <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">資助與合作 · Grants & Partnerships</span>
+          <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">地點 · Location</span>
+          <span class="plain">San Francisco Bay Area, CA</span>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.2s; margin-top:3rem">
+        <a class="btn-primary" href="mailto:info@peininfoundation.org" style="font-size:1rem; padding:1rem 3rem">
+          發送電郵 · Send Us an Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 陪您基金會 PéiNín Foundation &nbsp;·&nbsp; A California Nonprofit Corporation &nbsp;·&nbsp; 501(c)(3) Pending</p>
+    <p style="margin-top:0.4rem; font-style:italic">以心為本的科技，以您的語言送上關懷。&nbsp;·&nbsp; Technology with heart. Care in your language.</p>
+    <p style="margin-top:0.4rem"><a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a></p>
+  </footer>
+
+  <!-- SCROLL ANIMATION -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Trigger hero elements immediately
+    setTimeout(() => {
+      document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('visible'));
+    }, 100);
+  </script>
+
+</body>
+</html>
