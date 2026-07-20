@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — PéiNín Foundation</title>
+  <meta name="description" content="Terms of Service for the PéiNín (陪您) App by Pei Nin Foundation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red:#C0392B; --red-light:#E74C3C; --gold:#C9973A;
+      --cream:#FAF6EF; --paper:#F3EDE2; --ink:#1A1208;
+      --ink-mid:#3D2B10; --ink-soft:#6B4F2E; --white:#FFFDF9;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Serif TC',serif;background:var(--cream);color:var(--ink);line-height:1.9;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.85rem 2.5rem;background:rgba(250,246,239,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,151,58,.2)}
+    .nav-logo{display:flex;align-items:center;text-decoration:none}
+    .nav-logo svg{height:42px;width:auto}
+    .nav-back{font-size:.82rem;font-weight:600;color:var(--red);text-decoration:none;letter-spacing:.06em;border-bottom:1px solid var(--red);padding-bottom:1px}
+    .nav-back:hover{color:var(--gold);border-color:var(--gold)}
+
+    /* HERO BAND */
+    .page-hero{background:var(--ink);padding:8rem 2.5rem 4rem;text-align:center}
+    .page-hero .eyebrow{font-size:.7rem;letter-spacing:.22em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:block}
+    .page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--white);margin-bottom:.8rem}
+    .page-hero h1 em{font-style:normal;color:var(--red)}
+    .page-hero .meta{font-size:.85rem;color:rgba(255,255,255,.45);letter-spacing:.06em}
+
+    /* DIVIDER */
+    .divider{height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--gold) 50%,var(--red) 100%)}
+
+    /* CONTENT */
+    .content{max-width:820px;margin:0 auto;padding:5rem 2.5rem 6rem}
+    .toc{background:var(--paper);border-left:3px solid var(--gold);padding:1.8rem 2rem;margin-bottom:3.5rem}
+    .toc h2{font-size:.75rem;letter-spacing:.2em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:1rem}
+    .toc ol{padding-left:1.2rem}
+    .toc li{font-size:.88rem;color:var(--ink-soft);margin-bottom:.35rem}
+    .toc a{color:var(--red);text-decoration:none}
+    .toc a:hover{color:var(--gold)}
+
+    .policy-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(201,151,58,.15)}
+    .policy-section:last-child{border-bottom:none}
+    .section-num{font-size:.68rem;letter-spacing:.22em;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:.5rem}
+    .policy-section h2{font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:900;color:var(--ink);margin-bottom:1.2rem;line-height:1.2}
+    .policy-section h3{font-size:1rem;font-weight:700;color:var(--red);margin:1.5rem 0 .6rem}
+    .policy-section p{font-size:.93rem;color:var(--ink-soft);margin-bottom:.9rem;line-height:2}
+    .policy-section ul{padding-left:1.4rem;margin-bottom:.9rem}
+    .policy-section ul li{font-size:.93rem;color:var(--ink-soft);margin-bottom:.4rem;line-height:1.9}
+    .policy-section a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--red)}
+    .policy-section a:hover{color:var(--gold);border-color:var(--gold)}
+
+    .warning-box{background:#fff8f7;border:1.5px solid var(--red);border-left:4px solid var(--red);padding:1.3rem 1.5rem;margin:1.2rem 0;font-size:.88rem;color:var(--ink-mid);line-height:1.9}
+    .warning-box strong{color:var(--red)}
+
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:1.5rem 0}
+    .pricing-card{background:var(--white);border:1px solid rgba(201,151,58,.25);padding:1.5rem;text-align:center}
+    .pricing-card .plan-name{font-size:.72rem;letter-spacing:.15em;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:.5rem}
+    .pricing-card .plan-price{font-size:1.8rem;font-weight:900;color:var(--red);display:block;line-height:1}
+    .pricing-card .plan-period{font-size:.78rem;color:var(--ink-soft)}
+
+    .contact-box{background:var(--paper);padding:2rem;margin-top:1.2rem}
+    .contact-box p{font-size:.9rem;color:var(--ink-soft);margin-bottom:.4rem}
+    .contact-box a{color:var(--red);text-decoration:none;font-weight:600}
+
+    /* FOOTER */
+    footer{background:#0d0905;color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.76rem;letter-spacing:.05em;line-height:2.2}
+    footer a{color:var(--gold);opacity:.65;text-decoration:none}
+
+    @media(max-width:600px){
+      nav{padding:.85rem 1.2rem}
+      .content{padding:3rem 1.2rem 4rem}
+      .page-hero{padding:7rem 1.2rem 3rem}
+      .pricing-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="52" height="52" fill="#C0392B" rx="3"/>
+        <text x="26" y="37" text-anchor="middle" font-family="Noto Serif TC,serif" font-weight="900" font-size="22" fill="#FFFDF9">陪您</text>
+        <line x1="68" y1="6" x2="68" y2="46" stroke="#C9973A" stroke-width="0.75"/>
+        <text x="82" y="29" font-family="Noto Serif TC,serif" font-weight="700" font-size="19" fill="#1A1208">陪您基金會</text>
+        <text x="84" y="44" font-family="Georgia,serif" font-size="8.5" fill="#C9973A" letter-spacing="3">PÉINÍN</text>
+        <text x="128" y="44" font-family="Georgia,serif" font-size="8.5" fill="#6B4F2E" letter-spacing="3">FOUNDATION</text>
+      </svg>
+    </a>
+    <a class="nav-back" href="index.html">← Back to Home</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">Legal · 法律文件</span>
+    <h1>Terms of <em>Service</em></h1>
+    <p class="meta">PéiNín (陪您) App &nbsp;·&nbsp; Pei Nin Foundation &nbsp;·&nbsp; Effective April 27, 2026</p>
+  </div>
+  <div class="divider"></div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#s1">Acceptance of Terms</a></li>
+        <li><a href="#s2">Description of Service</a></li>
+        <li><a href="#s3">Important Limitations and Disclaimers</a></li>
+        <li><a href="#s4">Account Registration and Family Management</a></li>
+        <li><a href="#s5">Subscription and Payment</a></li>
+        <li><a href="#s6">Acceptable Use</a></li>
+        <li><a href="#s7">Privacy</a></li>
+        <li><a href="#s8">Intellectual Property</a></li>
+        <li><a href="#s9">Termination</a></li>
+        <li><a href="#s10">Limitation of Liability</a></li>
+        <li><a href="#s11">Indemnification</a></li>
+        <li><a href="#s12">Governing Law</a></li>
+        <li><a href="#s13">Changes to Terms</a></li>
+        <li><a href="#s14">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="policy-section" id="s1">
+      <span class="section-num">Section 1</span>
+      <h2>Acceptance of Terms</h2>
+      <p>By downloading, installing, or using the PéiNín (陪您) App ("App") provided by Pei Nin Foundation ("we", "us", or "our"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+      <p>These Terms apply to all users of the App, including senior users and their designated family members ("Caregivers") who manage accounts on their behalf.</p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="policy-section" id="s2">
+      <span class="section-num">Section 2</span>
+      <h2>Description of Service</h2>
+      <p>PéiNín is an AI-powered companion application designed for Chinese-speaking seniors in the United States. The App provides:</p>
+      <ul>
+        <li>AI voice companionship in Mandarin and Cantonese</li>
+        <li>Emergency SOS alerts to designated family members</li>
+        <li>GPS location sharing with designated family members</li>
+        <li>Daily reminders and wellness check-ins</li>
+        <li>Assistance navigating American daily life in Chinese</li>
+      </ul>
+      <div class="warning-box">
+        <strong>Important:</strong> PéiNín is a companion and assistance tool. It is NOT a medical device, emergency response service, or substitute for professional medical, legal, or emergency services.
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="policy-section" id="s3">
+      <span class="section-num">Section 3</span>
+      <h2>Important Limitations and Disclaimers</h2>
+      <h3>3.1 Not an Emergency Service</h3>
+      <div class="warning-box">
+        <strong>THE SOS FEATURE IN THIS APP NOTIFIES DESIGNATED FAMILY MEMBERS ONLY. IT DOES NOT CONTACT 911 OR ANY EMERGENCY SERVICES DIRECTLY.</strong> In a life-threatening emergency, please call 911 immediately. Do not rely solely on this App in an emergency situation.
+      </div>
+      <h3>3.2 Not a Medical Device</h3>
+      <p>PéiNín is not a medical device and does not provide medical advice, diagnosis, or treatment. Any health-related conversations with the AI companion are for companionship purposes only and should not replace professional medical advice.</p>
+      <h3>3.3 AI Limitations</h3>
+      <p>The AI companion may not always understand or respond correctly. It may make errors in language, context, or information. Do not rely on the AI for critical decisions involving health, legal matters, or financial matters.</p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="policy-section" id="s4">
+      <span class="section-num">Section 4</span>
+      <h2>Account Registration and Family Management</h2>
+      <p>Accounts are typically set up and managed by a designated Caregiver (adult child or family member) on behalf of the senior user. The Caregiver is responsible for:</p>
+      <ul>
+        <li>Providing accurate registration information</li>
+        <li>Maintaining the security of account credentials</li>
+        <li>Ensuring the senior user understands how to use the App</li>
+        <li>Reviewing and agreeing to these Terms on behalf of the senior user</li>
+      </ul>
+      <p>By creating an account, the Caregiver confirms they have authority to act on behalf of the senior user and agrees to these Terms.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="policy-section" id="s5">
+      <span class="section-num">Section 5</span>
+      <h2>Subscription and Payment</h2>
+      <p>PéiNín is offered on a subscription basis with the following tiers:</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <span class="plan-name">Basic Plan</span>
+          <span class="plan-price">$9.99</span>
+          <span class="plan-period">per month</span>
+        </div>
+        <div class="pricing-card">
+          <span class="plan-name">Standard Plan</span>
+          <span class="plan-price">$19.99</span>
+          <span class="plan-period">per month</span>
+        </div>
+        <div class="pricing-card">
+          <span class="plan-name">Premium Plan</span>
+          <span class="plan-price">$34.99</span>
+          <span class="plan-period">per month</span>
+        </div>
+      </div>
+      <p>Subscriptions are billed monthly and automatically renew unless cancelled. You may cancel your subscription at any time through your account settings or by contacting us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>. Cancellations take effect at the end of the current billing period. We do not offer refunds for partial months of service.</p>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="policy-section" id="s6">
+      <span class="section-num">Section 6</span>
+      <h2>Acceptable Use</h2>
+      <p>You agree to use the App only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+      <ul>
+        <li>Use the App to harass, abuse, or harm any person</li>
+        <li>Attempt to gain unauthorized access to the App or its systems</li>
+        <li>Use the App to transmit any harmful, offensive, or illegal content</li>
+        <li>Reverse engineer, decompile, or attempt to extract the source code of the App</li>
+        <li>Use the App for any commercial purpose without our written consent</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div class="policy-section" id="s7">
+      <span class="section-num">Section 7</span>
+      <h2>Privacy</h2>
+      <p>Your use of the App is also governed by our Privacy Policy, which is incorporated into these Terms by reference. Please review our <a href="privacy.html">Privacy Policy</a> to understand our data practices.</p>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div class="policy-section" id="s8">
+      <span class="section-num">Section 8</span>
+      <h2>Intellectual Property</h2>
+      <p>The App and all its content, features, and functionality are owned by Pei Nin Foundation and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works from any part of the App without our written permission.</p>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div class="policy-section" id="s9">
+      <span class="section-num">Section 9</span>
+      <h2>Termination</h2>
+      <p>We reserve the right to suspend or terminate your access to the App at any time if you violate these Terms or for any other reason at our discretion. You may terminate your account at any time by contacting us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>.</p>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div class="policy-section" id="s10">
+      <span class="section-num">Section 10</span>
+      <h2>Limitation of Liability</h2>
+      <p style="font-weight:600;color:var(--ink-mid)">TO THE MAXIMUM EXTENT PERMITTED BY LAW, PEI NIN FOUNDATION SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF THE APP. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE THREE MONTHS PRECEDING THE CLAIM.</p>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div class="policy-section" id="s11">
+      <span class="section-num">Section 11</span>
+      <h2>Indemnification</h2>
+      <p>You agree to indemnify and hold harmless Pei Nin Foundation and its officers, directors, and employees from any claims, damages, or expenses (including legal fees) arising from your use of the App or violation of these Terms.</p>
+    </div>
+
+    <!-- SECTION 12 -->
+    <div class="policy-section" id="s12">
+      <span class="section-num">Section 12</span>
+      <h2>Governing Law</h2>
+      <p>These Terms shall be governed by the laws of the State of California, United States, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved in the courts of San Mateo County, California.</p>
+    </div>
+
+    <!-- SECTION 13 -->
+    <div class="policy-section" id="s13">
+      <span class="section-num">Section 13</span>
+      <h2>Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of significant changes by email or through a notice in the App. Your continued use of the App after changes take effect constitutes your acceptance of the updated Terms.</p>
+    </div>
+
+    <!-- SECTION 14 -->
+    <div class="policy-section" id="s14">
+      <span class="section-num">Section 14</span>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about these Terms of Service, please contact us:</p>
+      <div class="contact-box">
+        <p>📧 <strong>Email:</strong> <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a></p>
+        <p>🌐 <strong>Website:</strong> <a href="https://peininfoundation.org">peininfoundation.org</a></p>
+        <p>📍 <strong>Mailing Address:</strong> Pei Nin Foundation, Daly City, CA</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 陪您基金會 PéiNín Foundation &nbsp;·&nbsp; A California Nonprofit Corporation &nbsp;·&nbsp; 501(c)(3) Approved · EIN: 42-2179578</p>
+    <p style="margin-top:.3rem"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a></p>
+  </footer>
+
+</body>
+</html>
