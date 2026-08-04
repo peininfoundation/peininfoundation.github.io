@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PéiNín support and frequently asked questions. Learn how the Mandarin/Cantonese AI companion app works, how family accounts connect, how SOS emergency alerts work, pricing, privacy, and how to contact us.">
+<title>支援與常見問題 · Support & FAQ — 陪您 PéiNín</title>
+<style>
+  :root{
+    --ink:#1F1B16;
+    --red:#A72626;
+    --red-soft:#C0392B;
+    --gold:#C49B59;
+    --gold-soft:#D8B87E;
+    --cream:#FBF6EE;
+    --cream-2:#F4EADB;
+    --paper:#FFFFFF;
+    --muted:#6E6357;
+    --line:#E9DDC9;
+    --green:#0F6E56;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Segoe UI",sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:"Noto Serif TC",Georgia,"Songti TC",serif;}
+
+  /* ---- top bar ---- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,238,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.15;text-decoration:none;color:var(--ink)}
+  .brand .zh{font-weight:700;font-size:20px;letter-spacing:1px}
+  .brand .en{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:600}
+  .nav-links{display:flex;gap:22px;align-items:center;font-size:14px}
+  .nav-links a{color:var(--muted);text-decoration:none;font-weight:500}
+  .nav-links a:hover{color:var(--red)}
+  .nav-cta{
+    background:var(--red);color:#fff;padding:9px 18px;border-radius:100px;
+    text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--red-soft)}
+  @media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* ---- hero ---- */
+  .hero{
+    background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);
+    padding:72px 24px 60px;text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:2px;font-weight:700;
+    color:var(--gold);text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:1px;
+    margin-bottom:8px;color:var(--ink);
+  }
+  .hero h1 em{color:var(--red);font-style:normal}
+  .hero .sub-en{font-size:15px;letter-spacing:1px;color:var(--gold);font-weight:600;margin-bottom:24px}
+  .hero p.lead{max-width:640px;margin:0 auto;font-size:17px;color:var(--muted)}
+  .hero-actions{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{
+    background:var(--red);color:#fff;padding:14px 28px;border-radius:100px;
+    text-decoration:none;font-weight:600;font-size:15px;
+  }
+  .btn-primary:hover{background:var(--red-soft)}
+  .btn-ghost{
+    background:transparent;color:var(--ink);padding:14px 28px;border-radius:100px;
+    text-decoration:none;font-weight:600;font-size:15px;border:1.5px solid var(--gold);
+  }
+  .btn-ghost:hover{background:var(--gold);color:#fff}
+
+  /* ---- what is section ---- */
+  .section{max-width:1080px;margin:0 auto;padding:64px 24px}
+  .section-label{
+    text-align:center;font-size:12px;letter-spacing:2px;font-weight:700;
+    color:var(--gold);text-transform:uppercase;margin-bottom:12px;
+  }
+  .section h2{
+    text-align:center;font-size:clamp(24px,4vw,34px);font-weight:800;
+    margin-bottom:16px;letter-spacing:1px;
+  }
+  .section .section-intro{
+    text-align:center;max-width:640px;margin:0 auto 44px;color:var(--muted);font-size:16px;
+  }
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:860px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:28px 24px;box-shadow:0 1px 3px rgba(120,90,40,0.04);
+  }
+  .card .ic{font-size:30px;margin-bottom:14px;display:block}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+  .card h3 .en{display:block;font-size:12px;color:var(--gold);font-weight:600;letter-spacing:1px;margin-top:2px}
+  .card p{font-size:14.5px;color:var(--muted)}
+
+  /* ---- FAQ ---- */
+  .faq-wrap{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .faq-cat{
+    font-size:13px;letter-spacing:1.5px;font-weight:700;color:var(--red);
+    text-transform:uppercase;margin:36px 0 4px;padding-bottom:8px;
+    border-bottom:2px solid var(--cream-2);
+  }
+  .faq-cat:first-of-type{margin-top:0}
+  details{
+    border-bottom:1px solid var(--line);padding:4px 0;
+  }
+  details summary{
+    cursor:pointer;list-style:none;padding:20px 44px 20px 4px;position:relative;
+    font-weight:600;font-size:16.5px;color:var(--ink);
+  }
+  details summary::-webkit-details-marker{display:none}
+  details summary .en{display:block;font-size:12.5px;color:var(--gold);font-weight:600;margin-top:3px;letter-spacing:.5px}
+  details summary::after{
+    content:"+";position:absolute;right:8px;top:18px;font-size:24px;
+    color:var(--gold);font-weight:400;transition:transform .2s;
+  }
+  details[open] summary::after{content:"\2013"}
+  details .answer{padding:0 44px 22px 4px;color:var(--muted);font-size:15.5px}
+  details .answer strong{color:var(--ink)}
+  details .answer .hl{color:var(--red);font-weight:600}
+
+  /* ---- contact ---- */
+  .contact{
+    background:linear-gradient(160deg,var(--cream-2) 0%,var(--cream) 100%);
+    text-align:center;padding:64px 24px;
+  }
+  .contact h2{font-size:clamp(24px,4vw,32px);font-weight:800;margin-bottom:12px;letter-spacing:1px}
+  .contact p{max-width:560px;margin:0 auto 8px;color:var(--muted);font-size:16px}
+  .contact-cards{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+    max-width:800px;margin:36px auto 0;
+  }
+  @media(max-width:720px){.contact-cards{grid-template-columns:1fr}}
+  .cc{
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 18px;
+  }
+  .cc .ic{font-size:24px;margin-bottom:10px}
+  .cc .lbl{font-size:12px;letter-spacing:1px;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:6px}
+  .cc a{color:var(--red);text-decoration:none;font-weight:600;font-size:15px;word-break:break-all}
+  .cc a:hover{text-decoration:underline}
+  .cc .plain{color:var(--ink);font-weight:600;font-size:15px}
+  .response-note{
+    margin-top:36px;display:inline-block;background:var(--paper);
+    border:1px solid var(--line);border-radius:100px;padding:10px 22px;
+    font-size:14px;color:var(--muted);
+  }
+
+  /* ---- footer ---- */
+  footer{background:var(--ink);color:#E8DDC9;text-align:center;padding:44px 24px}
+  footer .fbrand{font-size:20px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+  footer .ftag{font-size:13px;color:var(--gold-soft);margin-bottom:20px}
+  footer .flinks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:13px;margin-bottom:20px}
+  footer .flinks a{color:#E8DDC9;text-decoration:none;opacity:.8}
+  footer .flinks a:hover{opacity:1;color:var(--gold-soft)}
+  footer .fmeta{font-size:12px;color:#9C8E78;line-height:1.8}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://peininfoundation.org">
+      <span class="zh">陪您</span>
+      <span class="en">PÉINÍN FOUNDATION</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">關於陪您</a>
+      <a href="#faq">常見問題</a>
+      <a href="#contact">聯絡我們</a>
+      <a class="nav-cta" href="mailto:info@peininfoundation.org">獲得協助 · Get Help</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="eyebrow">Support &amp; Help Center</span>
+  <h1>我們<em>隨時</em>為您解答</h1>
+  <div class="sub-en">Support &amp; Frequently Asked Questions</div>
+  <p class="lead">
+    無論您是正在了解陪您的家人，還是已經在使用的長輩——這裡有您需要的答案。
+    找不到？寫一封電郵給我們，我們會親自回覆。
+    <br><br>
+    Whether you are a family member exploring PéiNín, or a senior already using it — you will find your answers here. Can't find what you need? Email us, and a real person will reply.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#faq">瀏覽常見問題 · Browse FAQ</a>
+    <a class="btn-ghost" href="mailto:info@peininfoundation.org">直接聯絡 · Contact Us</a>
+  </div>
+</section>
+
+<!-- WHAT IS PÉINÍN -->
+<section class="section" id="about">
+  <div class="section-label">What is PéiNín</div>
+  <h2>陪您是什麼？</h2>
+  <p class="section-intro">
+    陪您（PéiNín，意為「陪伴於您身旁」）是首個專為在美華裔長輩打造的中文 AI 陪伴應用程式。
+    語音優先、無需英文、無需複雜設定。<br>
+    <span style="font-size:14px">PéiNín is the first Chinese-language AI companion built for Chinese American seniors — voice-first, no English required.</span>
+  </p>
+  <div class="cards">
+    <div class="card">
+      <span class="ic">🗣️</span>
+      <h3>用母語交談<span class="en">Talk in Their Language</span></h3>
+      <p>長輩用國語或粵語自然對話——問問題、聊天、分享一天。不需要打字，不需要英文。</p>
+    </div>
+    <div class="card">
+      <span class="ic">🚨</span>
+      <h3>一鍵求助家人<span class="en">One-Touch SOS to Family</span></h3>
+      <p>一個按鍵，立即通知指定家人——附上位置，中英雙語。專為無法用英文求助的長輩設計。</p>
+    </div>
+    <div class="card">
+      <span class="ic">👨‍👩‍👧</span>
+      <h3>家人遠端安心<span class="en">Family Peace of Mind</span></h3>
+      <p>子女透過家屬後台設定提醒、查看活動、接收安全通知——無論身在何處，都能安心。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="faq-wrap" id="faq">
+<section class="section">
+  <div class="section-label">Frequently Asked Questions</div>
+  <h2>常見問題</h2>
+  <p class="section-intro">最常被家人和長輩問到的問題，我們誠實地一一回答。<br><span style="font-size:14px">The questions families ask us most — answered honestly.</span></p>
+
+  <!-- CATEGORY: Getting Started -->
+  <div class="faq-cat">開始使用 · Getting Started</div>
+
+  <details open>
+    <summary>陪您適合我的父母嗎？<span class="en">Is PéiNín right for my parent?</span></summary>
+    <div class="answer">
+      如果您的父母說國語或粵語、獨自生活或白天獨處、而您希望隨時掌握他們的安危——陪您就是為此而設計的。
+      <span class="hl">不需要任何科技經驗</span>，介面只有幾個大按鈕，長輩按一下就能和陪您說話。
+      <br><br>
+      If your parent speaks Mandarin or Cantonese, spends time alone, and you want peace of mind about their wellbeing — PéiNín was built for exactly this. No tech experience needed.
+    </div>
+  </details>
+
+  <details>
+    <summary>長輩需要會用智慧型手機嗎？<span class="en">Does my parent need to know how to use a smartphone?</span></summary>
+    <div class="answer">
+      幾乎不需要。陪您是<strong>語音優先</strong>的——長輩主要是「說話」，不是「操作」。介面刻意保持極簡：大字體、大按鈕。
+      通常由子女幫忙完成一次性的設定，之後長輩每天只需要按一下開始說話。
+      <br><br>
+      Almost none. PéiNín is voice-first — your parent mostly talks, not taps. The setup is usually done once by an adult child; after that, the senior just presses one button to start talking.
+    </div>
+  </details>
+
+  <details>
+    <summary>怎麼開始？<span class="en">How do we get started?</span></summary>
+    <div class="answer">
+      寫一封電郵到 <span class="hl">info@peininfoundation.org</span>，告訴我們您的情況。
+      我們目前正在灣區與真實長輩和家庭一起測試，並逐步開放。我們會親自引導您完成設定。
+      <br><br>
+      Email us at info@peininfoundation.org and tell us about your situation. We are currently testing with real seniors and families in the Bay Area and onboarding gradually. We will personally guide you through setup.
+    </div>
+  </details>
+
+  <!-- CATEGORY: Safety & SOS -->
+  <div class="faq-cat">安全與求助 · Safety &amp; SOS</div>
+
+  <details>
+    <summary>SOS 求助會打給 911 嗎？<span class="en">Does the SOS button call 911?</span></summary>
+    <div class="answer">
+      不會，這是刻意的設計。SOS 會<strong>立即通知您指定的家人</strong>，附上長輩的位置，用中英雙語說明情況。
+      <span class="hl">為什麼不是 911？</span>因為 911 需要用英文清楚描述情況——這正是許多華裔長輩做不到的。
+      由懂長輩、會說中文的家人先接到通知，能更快做出正確判斷。如遇醫療急症，家人可代為聯絡 911。
+      <br><br>
+      No, and that is intentional. SOS instantly notifies your designated family with the senior's location, in both Chinese and English. 911 requires describing an emergency in fluent English — the exact barrier many Chinese seniors face. Family who speak the language can respond faster and, if needed, call 911 on their behalf.
+    </div>
+  </details>
+
+  <details>
+    <summary>如果長輩一整天沒開 app，我會知道嗎？<span class="en">Will I know if my parent hasn't opened the app?</span></summary>
+    <div class="answer">
+      會。如果長輩在設定的時段內沒有使用陪您，系統會<strong>自動通知已連結的家人</strong>。
+      這是「不打擾的守護」——不監控對話內容，只在異常時提醒您關心一下。
+      <br><br>
+      Yes. If your parent doesn't use PéiNín within a set window, linked family members are automatically notified. It's watchfulness without surveillance — we don't monitor conversations, we just let you know when something seems off.
+    </div>
+  </details>
+
+  <details>
+    <summary>陪您會取代我對父母的探望嗎？<span class="en">Does PéiNín replace visiting my parent?</span></summary>
+    <div class="answer">
+      <strong>不會，也不應該。</strong>我們說得很直接：陪您是您關愛的<span class="hl">延伸</span>，不是<span class="hl">替代</span>。
+      沒有任何科技能取代您親自的陪伴。陪您做的是——在您不在身邊的時間裡，讓長輩有人說話、有人守護，
+      讓您更安心，而不是讓您更少出現。
+      <br><br>
+      No — and it shouldn't. We'll say this plainly: PéiNín is an extension of your care, not a replacement for it. No technology replaces your presence. What PéiNín does is give your parent companionship and safety during the hours you can't be there.
+    </div>
+  </details>
+
+  <!-- CATEGORY: Privacy -->
+  <div class="faq-cat">隱私與資料 · Privacy &amp; Data</div>
+
+  <details>
+    <summary>我能看到父母和 AI 的對話內容嗎？<span class="en">Can I read my parent's conversations with the AI?</span></summary>
+    <div class="answer">
+      <strong>不能，這是我們刻意的隱私界線。</strong>家人可以看到活動摘要、提醒完成狀況、安全警報——
+      但<span class="hl">看不到對話的具體內容</span>。長輩也擁有隱私和尊嚴。這是「安全，但不侵犯」的原則。
+      <br><br>
+      No — this is a deliberate privacy boundary. Family can see activity summaries, reminder status, and safety alerts, but never the content of conversations. Seniors deserve dignity and privacy too. Safety without surveillance.
+    </div>
+  </details>
+
+  <details>
+    <summary>我父母的資料安全嗎？<span class="en">Is my parent's data safe?</span></summary>
+    <div class="answer">
+      我們非常認真看待這件事。所有資料都經過加密傳輸，儲存在受保護的資料庫中。
+      我們<span class="hl">不販售任何個人資料</span>，app 內也<span class="hl">沒有廣告</span>。
+      完整細節請見我們的<a href="https://peininfoundation.org/privacy.html" style="color:var(--red);font-weight:600">隱私政策</a>。
+      <br><br>
+      We take this seriously. All data is encrypted in transit and stored in a protected database. We never sell personal data, and there are no ads in the app. Full details are in our <a href="https://peininfoundation.org/privacy.html" style="color:var(--red);font-weight:600">Privacy Policy</a>.
+    </div>
+  </details>
+
+  <!-- CATEGORY: Pricing & Foundation -->
+  <div class="faq-cat">收費與基金會 · Pricing &amp; Foundation</div>
+
+  <details>
+    <summary>陪您要多少錢？<span class="en">How much does PéiNín cost?</span></summary>
+    <div class="answer">
+      陪您採用月費訂閱制，由子女為父母訂閱。我們正在敲定方案細節，會確保定價
+      <span class="hl">讓一般家庭都負擔得起</span>——因為我們是非牟利機構，使命是服務社區，不是追求利潤。
+      想了解目前的方案，請來信詢問。
+      <br><br>
+      PéiNín is a monthly subscription, paid by adult children for their parents. We're finalizing plan details and are committed to keeping it affordable for everyday families — we're a nonprofit, and our mission is to serve the community. Email us for current pricing.
+    </div>
+  </details>
+
+  <details>
+    <summary>陪您是公司還是慈善機構？<span class="en">Is PéiNín a company or a charity?</span></summary>
+    <div class="answer">
+      陪您基金會是一個<strong>加州 501(c)(3) 非牟利機構</strong>（EIN: 42-2179578），
+      聯邦免稅資格已於 2026 年 4 月 21 日獲批。
+      我們由親身經歷這個問題的華裔美國人創立——我們的使命是關懷，不是利潤。
+      <br><br>
+      PéiNín Foundation is a California 501(c)(3) nonprofit (EIN: 42-2179578), with federal tax-exempt status approved April 21, 2026. We were founded by Chinese Americans who lived this problem firsthand. Our mission is care, not profit.
+    </div>
+  </details>
+
+  <details>
+    <summary>我可以捐款或合作嗎？<span class="en">Can I donate or partner with you?</span></summary>
+    <div class="answer">
+      非常歡迎。我們正在尋找資助夥伴、社區合作機構，以及認同我們使命的支持者。
+      如果您代表老人中心、社區健康組織或社會服務機構，我們很想與您合作。
+      請來信 <span class="hl">info@peininfoundation.org</span>。
+      <br><br>
+      We'd love that. We're seeking funding partners, community collaborators, and supporters who share our mission. If you represent a senior center, community health organization, or social service agency, we want to work with you. Email info@peininfoundation.org.
+    </div>
+  </details>
+
+  <!-- CATEGORY: Technical -->
+  <div class="faq-cat">技術支援 · Technical Help</div>
+
+  <details>
+    <summary>語音辨識不準或沒反應怎麼辦？<span class="en">What if the voice recognition isn't working?</span></summary>
+    <div class="answer">
+      先確認裝置已允許麥克風權限，並連上穩定的網路。如果問題持續，請來信
+      <span class="hl">info@peininfoundation.org</span>，告訴我們裝置型號和發生的情況——
+      我們會盡快協助解決。您的回饋也直接幫助我們把陪您做得更好。
+      <br><br>
+      First, check that the device has microphone permission enabled and a stable internet connection. If the problem continues, email info@peininfoundation.org with your device model and what happened — we'll help, and your feedback directly makes PéiNín better.
+    </div>
+  </details>
+
+  <details>
+    <summary>支援哪些語言？<span class="en">Which languages are supported?</span></summary>
+    <div class="answer">
+      目前支援<strong>國語（普通話）</strong>，<strong>粵語（廣東話）</strong>正在開發中，即將推出。
+      我們對粵語的語音品質有嚴格的要求，會在達到標準後才正式推出。
+      <br><br>
+      Mandarin is supported now. Cantonese is in active development and coming soon — we hold Cantonese voice quality to a high standard and will launch it only when it meets that bar.
+    </div>
+  </details>
+
+</section>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <h2>找不到答案？直接聯絡我們</h2>
+  <p>我們是真實的人，會親自回覆每一封來信。無論是家人的疑問、長輩的需求，還是合作的想法——我們都想聽。</p>
+  <p style="font-size:14px">We're real people, and we reply to every email personally.</p>
+
+  <div class="contact-cards">
+    <div class="cc">
+      <div class="ic">💬</div>
+      <div class="lbl">一般協助 · Support</div>
+      <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>
+    </div>
+    <div class="cc">
+      <div class="ic">🤝</div>
+      <div class="lbl">合作與資助 · Partnerships</div>
+      <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>
+    </div>
+    <div class="cc">
+      <div class="ic">📍</div>
+      <div class="lbl">地點 · Location</div>
+      <span class="plain">San Francisco Bay Area, CA</span>
+    </div>
+  </div>
+
+  <div class="response-note">⏱️ 我們通常在 1–2 個工作天內回覆 · We typically reply within 1–2 business days</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fbrand">陪您 · PéiNín</div>
+  <div class="ftag">以心為本的科技，以您的語言送上關懷 · Technology with heart. Care in your language.</div>
+  <div class="flinks">
+    <a href="https://peininfoundation.org">首頁 · Home</a>
+    <a href="#faq">常見問題 · FAQ</a>
+    <a href="https://peininfoundation.org/privacy.html">隱私政策 · Privacy</a>
+    <a href="https://peininfoundation.org/terms.html">服務條款 · Terms</a>
+    <a href="mailto:info@peininfoundation.org">聯絡 · Contact</a>
+  </div>
+  <div class="fmeta">
+    © 2026 陪您基金會 PéiNín Foundation · A California Nonprofit Corporation<br>
+    501(c)(3) Approved · EIN: 42-2179578 · San Francisco Bay Area, CA
+  </div>
+</footer>
+
+</body>
+</html>
