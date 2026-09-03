@@ -1,288 +1,342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — PéiNín Foundation</title>
-  <meta name="description" content="Privacy Policy for the PéiNín (陪您) App by Pei Nin Foundation." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --red:#C0392B; --red-light:#E74C3C; --gold:#C9973A;
-      --cream:#FAF6EF; --paper:#F3EDE2; --ink:#1A1208;
-      --ink-mid:#3D2B10; --ink-soft:#6B4F2E; --white:#FFFDF9;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Noto Serif TC',serif;background:var(--cream);color:var(--ink);line-height:1.9;overflow-x:hidden}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PéiNín Privacy Policy — what data the app collects, how it is used, and the third-party service providers it is shared with. App by PéiNín Foundation, a California 501(c)(3) nonprofit.">
+<title>隱私政策 · Privacy Policy — PéiNín - AI Companion for Seniors</title>
+<style>
+  :root{
+    --ink:#1F1B16; --red:#A72626; --red-soft:#C0392B; --gold:#C49B59;
+    --cream:#FBF6EE; --cream-2:#F4EADB; --paper:#FFFFFF; --muted:#6E6357;
+    --line:#E9DDC9; --green:#0F6E56;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Segoe UI",sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.75;-webkit-font-smoothing:antialiased;
+  }
 
-    /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.85rem 2.5rem;background:rgba(250,246,239,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,151,58,.2)}
-    .nav-logo{display:flex;align-items:center;text-decoration:none}
-    .nav-logo svg{height:42px;width:auto}
-    .nav-back{font-size:.82rem;font-weight:600;color:var(--red);text-decoration:none;letter-spacing:.06em;border-bottom:1px solid var(--red);padding-bottom:1px}
-    .nav-back:hover{color:var(--gold);border-color:var(--gold)}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,238,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:860px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;flex-direction:column;line-height:1.15;text-decoration:none;color:var(--ink)}
+  .brand .zh{font-weight:700;font-size:20px;letter-spacing:1px}
+  .brand .en{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:600}
+  .nav-back{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+  .nav-back:hover{color:var(--red)}
 
-    /* HERO BAND */
-    .page-hero{background:var(--ink);padding:8rem 2.5rem 4rem;text-align:center}
-    .page-hero .eyebrow{font-size:.7rem;letter-spacing:.22em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:block}
-    .page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--white);margin-bottom:.8rem}
-    .page-hero h1 em{font-style:normal;color:var(--red)}
-    .page-hero .meta{font-size:.85rem;color:rgba(255,255,255,.45);letter-spacing:.06em}
+  .hero{background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);padding:52px 24px 40px;text-align:center;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{display:inline-block;font-size:12px;letter-spacing:2px;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+  .hero h1{font-size:clamp(26px,5vw,36px);font-weight:800;letter-spacing:1px;margin-bottom:8px}
+  .hero .sub-en{font-size:14px;letter-spacing:1px;color:var(--gold);font-weight:600;margin-bottom:12px}
+  .hero .app-name{font-size:13px;color:var(--muted);margin-bottom:6px}
+  .hero .app-name strong{color:var(--ink)}
+  .hero .dates{font-size:13px;color:var(--muted);margin-top:10px}
 
-    /* DIVIDER */
-    .divider{height:4px;background:linear-gradient(90deg,var(--red) 0%,var(--gold) 50%,var(--red) 100%)}
+  .wrap{max-width:800px;margin:0 auto;padding:44px 24px 24px}
+  .toc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:32px}
+  .toc h2{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+  .toc li{font-size:14px;margin-bottom:6px;break-inside:avoid}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--red)}
+  @media(max-width:600px){.toc ol{columns:1}}
 
-    /* CONTENT */
-    .content{max-width:820px;margin:0 auto;padding:5rem 2.5rem 6rem}
-    .toc{background:var(--paper);border-left:3px solid var(--gold);padding:1.8rem 2rem;margin-bottom:3.5rem}
-    .toc h2{font-size:.75rem;letter-spacing:.2em;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:1rem}
-    .toc ol{padding-left:1.2rem}
-    .toc li{font-size:.88rem;color:var(--ink-soft);margin-bottom:.35rem}
-    .toc a{color:var(--red);text-decoration:none}
-    .toc a:hover{color:var(--gold)}
+  section.pp{margin-bottom:34px;scroll-margin-top:80px}
+  section.pp h2{font-size:21px;font-weight:800;letter-spacing:.5px;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--cream-2)}
+  section.pp h2 .num{color:var(--red);margin-right:8px}
+  section.pp h3{font-size:16px;font-weight:700;color:var(--ink);margin:18px 0 6px}
+  section.pp p{font-size:15.5px;color:var(--muted);margin-bottom:12px}
+  section.pp p strong,section.pp li strong{color:var(--ink)}
+  section.pp ul{list-style:none;margin:6px 0 14px}
+  section.pp ul li{position:relative;padding:7px 0 7px 24px;font-size:15px;color:var(--muted);border-bottom:1px solid var(--line)}
+  section.pp ul li:last-child{border-bottom:none}
+  section.pp ul li::before{content:"";position:absolute;left:4px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  section.pp a{color:var(--red);font-weight:600;text-decoration:none}
+  section.pp a:hover{text-decoration:underline}
 
-    .policy-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(201,151,58,.15)}
-    .policy-section:last-child{border-bottom:none}
-    .section-num{font-size:.68rem;letter-spacing:.22em;font-weight:700;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:.5rem}
-    .policy-section h2{font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:900;color:var(--ink);margin-bottom:1.2rem;line-height:1.2}
-    .policy-section h3{font-size:1rem;font-weight:700;color:var(--red);margin:1.5rem 0 .6rem}
-    .policy-section p{font-size:.93rem;color:var(--ink-soft);margin-bottom:.9rem;line-height:2}
-    .policy-section ul{padding-left:1.4rem;margin-bottom:.9rem}
-    .policy-section ul li{font-size:.93rem;color:var(--ink-soft);margin-bottom:.4rem;line-height:1.9}
-    .policy-section a{color:var(--red);text-decoration:none;border-bottom:1px solid var(--red)}
-    .policy-section a:hover{color:var(--gold);border-color:var(--gold)}
+  /* provider cards */
+  .provider{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:16px 20px;margin-bottom:14px}
+  .provider h3{margin:0 0 4px;font-size:16px;color:var(--ink)}
+  .provider .role{font-size:14px;color:var(--gold);font-weight:600;margin-bottom:8px}
+  .provider p{font-size:14.5px;margin-bottom:6px}
+  .provider p:last-child{margin-bottom:0}
+  .provider .receives{font-size:14.5px}
 
-    .warning-box{background:#fff8f7;border:1.5px solid var(--red);border-left:4px solid var(--red);padding:1.3rem 1.5rem;margin:1.2rem 0;font-size:.88rem;color:var(--ink-mid);line-height:1.9}
-    .warning-box strong{color:var(--red)}
+  .callout{background:var(--cream-2);border-radius:10px;padding:16px 20px;margin:16px 0;font-size:15px;color:var(--ink)}
+  .callout strong{color:var(--red)}
 
-    .contact-box{background:var(--paper);padding:2rem;margin-top:1.2rem}
-    .contact-box p{font-size:.9rem;color:var(--ink-soft);margin-bottom:.4rem}
-    .contact-box a{color:var(--red);text-decoration:none;font-weight:600}
+  .intro-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:32px}
+  .intro-card p{font-size:15.5px;color:var(--muted);margin-bottom:10px}
+  .intro-card p:last-child{margin-bottom:0}
 
-    /* FOOTER */
-    footer{background:#0d0905;color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.76rem;letter-spacing:.05em;line-height:2.2}
-    footer a{color:var(--gold);opacity:.65;text-decoration:none}
-
-    @media(max-width:600px){
-      nav{padding:.85rem 1.2rem}
-      .content{padding:3rem 1.2rem 4rem}
-      .page-hero{padding:7rem 1.2rem 3rem}
-    }
-  </style>
+  footer{background:var(--ink);color:#E8DDC9;text-align:center;padding:36px 24px}
+  footer .fbrand{font-size:18px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+  footer .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:13px;margin:16px 0}
+  footer .flinks a{color:#E8DDC9;text-decoration:none;opacity:.8}
+  footer .flinks a:hover{opacity:1;color:var(--gold)}
+  footer .fmeta{font-size:12px;color:#9C8E78;line-height:1.8}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="index.html">
-      <svg viewBox="0 0 260 52" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="52" height="52" fill="#C0392B" rx="3"/>
-        <text x="26" y="37" text-anchor="middle" font-family="Noto Serif TC,serif" font-weight="900" font-size="22" fill="#FFFDF9">陪您</text>
-        <line x1="68" y1="6" x2="68" y2="46" stroke="#C9973A" stroke-width="0.75"/>
-        <text x="82" y="29" font-family="Noto Serif TC,serif" font-weight="700" font-size="19" fill="#1A1208">陪您基金會</text>
-        <text x="84" y="44" font-family="Georgia,serif" font-size="8.5" fill="#C9973A" letter-spacing="3">PÉINÍN</text>
-        <text x="128" y="44" font-family="Georgia,serif" font-size="8.5" fill="#6B4F2E" letter-spacing="3">FOUNDATION</text>
-      </svg>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://peininfoundation.org">
+      <span class="zh">陪您</span>
+      <span class="en">PÉINÍN FOUNDATION</span>
     </a>
-    <a class="nav-back" href="index.html">← Back to Home</a>
+    <a class="nav-back" href="https://peininfoundation.org">← 返回首頁 · Home</a>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Privacy Policy</span>
+  <h1>隱私政策</h1>
+  <div class="sub-en">Privacy Policy</div>
+  <div class="app-name">for <strong>PéiNín - AI Companion for Seniors</strong> · an app by <strong>PéiNín Foundation</strong></div>
+  <div class="dates">Effective Date: [INSERT DATE] &nbsp;·&nbsp; Last Updated: [INSERT DATE]</div>
+</section>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <div class="intro-card">
+    <p><strong>PéiNín Foundation</strong> is a California 501(c)(3) nonprofit organization (EIN 42-2179578) that builds technology to protect and connect Chinese American seniors. Our app, <strong>PéiNín - AI Companion for Seniors</strong>, is an AI-powered voice companion for English, Mandarin, and Cantonese-speaking seniors and their families.</p>
+    <p>This policy explains what data the app collects, how it is collected, all the ways it is used, and the third-party providers we share it with. If you have any questions, contact us at <a href="mailto:info@peininfoundation.org" style="color:var(--red);font-weight:600;text-decoration:none">info@peininfoundation.org</a>.</p>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc">
+    <h2>目錄 · Contents</h2>
+    <ol>
+      <li><a href="#collect">Information We Collect</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#use">How We Use Your Information</a></li>
+      <li><a href="#voice">Voice &amp; Conversation Data</a></li>
+      <li><a href="#sos">SOS Emergency Alerts</a></li>
+      <li><a href="#family">Family &amp; Caregiver Access</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#rights">Your Rights &amp; Choices</a></li>
+      <li><a href="#ccpa">California Privacy Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#medical">Not a Medical Service</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
   </nav>
 
-  <!-- HERO -->
-  <div class="page-hero">
-    <span class="eyebrow">Legal · 法律文件</span>
-    <h1>Privacy <em>Policy</em></h1>
-    <p class="meta">PéiNín (陪您) App &nbsp;·&nbsp; Pei Nin Foundation &nbsp;·&nbsp; Effective April 27, 2026</p>
+  <!-- 1. INFORMATION WE COLLECT (EDIT ONE) -->
+  <section class="pp" id="collect">
+    <h2><span class="num">1.</span>Information We Collect</h2>
+    <p>When you create an account and use the app, we collect the following information:</p>
+    <ul>
+      <li><strong>Name, age, and preferred language</strong> (English, Mandarin, or Cantonese)</li>
+      <li><strong>Interests and personal notes</strong> you choose to add to your profile</li>
+      <li><strong>Notes about your family</strong> that you or your family members enter</li>
+      <li><strong>The name and relationship</strong> of the emergency contact you designate</li>
+      <li><strong>The names of any medications</strong> you add to reminders</li>
+      <li><strong>Voice recordings</strong> of your conversations with the AI companion</li>
+      <li><strong>The text of your conversations</strong>, and an automatically generated summary of them</li>
+      <li><strong>GPS location</strong>, only while location sharing is turned on</li>
+      <li><strong>Device type and operating system</strong></li>
+    </ul>
+  </section>
+
+  <!-- 2. THIRD-PARTY SERVICES (EDIT TWO) -->
+  <section class="pp" id="third-party">
+    <h2><span class="num">2.</span>Third-Party Services</h2>
+    <p>To understand what you say and to reply to you, PéiNín sends your information to the service providers listed below. We do not sell your information, and we do not use it for advertising.</p>
+
+    <div class="provider">
+      <h3>Groq, Inc.</h3>
+      <div class="role">Converts your voice recording into text.</div>
+      <p class="receives"><strong>Receives:</strong> your voice recording.</p>
+      <p>Under our agreement with Groq, Groq is not permitted to use this data to train or fine-tune any AI model, and does not retain it by default.</p>
+    </div>
+
+    <div class="provider">
+      <h3>Google LLC (Gemini API)</h3>
+      <div class="role">Generates the companion's replies.</div>
+      <p class="receives"><strong>Receives:</strong> the text of what you said, your recent messages in the conversation, and the profile information listed above — your name, language, interests, family notes, emergency contact, medication names, and your location when location sharing is turned on.</p>
+      <p>We use the paid tier of the Gemini API, under which Google does not use this data to train its models.</p>
+    </div>
+
+    <div class="provider">
+      <h3>MiniMax</h3>
+      <div class="role">Converts the companion's reply into speech so it can be read aloud to you.</div>
+      <p class="receives"><strong>Receives:</strong> the text of the reply only, which may include your name. It does not receive your voice recording or any of your profile information.</p>
+    </div>
+
+    <div class="provider">
+      <h3>Google Maps Platform</h3>
+      <div class="role">Finds nearby places, such as restaurants or pharmacies, when you ask for them.</div>
+      <p class="receives"><strong>Receives:</strong> your location and the name of the place you asked about.</p>
+    </div>
+
+    <div class="provider">
+      <h3>Amazon Web Services</h3>
+      <div class="role">Stores voice recordings and generated audio.</div>
+    </div>
+
+    <p>Each of these providers is bound by contract or by their published terms to protect your information to a standard equal to the protections described in this policy, to use it only to provide their service to us, and not to disclose or use it for their own purposes.</p>
+
+    <div class="callout">
+      Before you can use the AI companion, the app asks you to agree to this sharing. <strong>Nothing is sent to these providers until you do.</strong>
+    </div>
+  </section>
+
+  <!-- 3. HOW WE USE -->
+  <section class="pp" id="use">
+    <h2><span class="num">3.</span>How We Use Your Information</h2>
+    <p>We use the information we collect only to provide and improve the app's features:</p>
+    <ul>
+      <li><strong>AI companionship</strong> — your conversation and profile provide personalized responses in your language</li>
+      <li><strong>Voice transcription and spoken replies</strong> — converting your speech to text and the AI's text back into audio</li>
+      <li><strong>Reminders</strong> — medication and daily reminders you or your family set, with family notified if a reminder is not confirmed</li>
+      <li><strong>SOS emergency alerts</strong> — sending your location and an alert to your designated family contacts</li>
+      <li><strong>Location-aware help</strong> — finding local weather, nearby places, and relevant local information when you ask</li>
+      <li><strong>Family dashboard</strong> — showing activity summaries, reminder status, and safety alerts to linked family members</li>
+    </ul>
+    <p>PéiNín Foundation does not use your personal information for advertising, does not display ads, and does not sell your personal data to any third party.</p>
+  </section>
+
+  <!-- 4. VOICE -->
+  <section class="pp" id="voice">
+    <h2><span class="num">4.</span>Voice &amp; Conversation Data</h2>
+    <p>The core feature of PéiNín is voice conversation. When you speak to the app:</p>
+    <ul>
+      <li>Your voice recording is captured and converted to text. The raw audio recording is not retained by us after transcription.</li>
+      <li>Your messages and the AI's responses are stored as your conversation history, so the companion can maintain continuity and personalization.</li>
+      <li>Your conversation history is periodically summarized by an automated process to help the AI remember important things about you.</li>
+      <li>AI-generated audio replies are stored temporarily and automatically deleted after 180 days for all users.</li>
+    </ul>
+  </section>
+
+  <!-- 5. SOS -->
+  <section class="pp" id="sos">
+    <h2><span class="num">5.</span>SOS Emergency Alerts</h2>
+    <p>PéiNín includes a one-touch SOS emergency alert feature. When SOS is activated:</p>
+    <ul>
+      <li>Your current location is immediately shared with your designated emergency family contacts.</li>
+      <li>An alert notification is sent to those contacts, describing the emergency in both Chinese and English.</li>
+      <li>The time and location of the SOS event are logged for safety record-keeping.</li>
+    </ul>
+    <p>The SOS feature sends alerts to your designated family contacts only. It does not automatically contact 911 or any emergency dispatch service.</p>
+  </section>
+
+  <!-- 6. FAMILY -->
+  <section class="pp" id="family">
+    <h2><span class="num">6.</span>Family &amp; Caregiver Access</h2>
+    <p>Adult children and caregivers can link their account to a senior's account to provide support and receive safety updates. Access is scoped to protect the senior's privacy.</p>
+    <h3>Family members can see:</h3>
+    <ul>
+      <li>Inactivity alerts, SOS emergency alerts, and medication non-confirmation alerts</li>
+      <li>Activity summaries (activities completed, points earned, general activity levels)</li>
+      <li>The ability to create and manage the senior's reminders</li>
+    </ul>
+    <h3>Family members cannot see:</h3>
+    <ul>
+      <li>The content of any conversation the senior has with the AI</li>
+      <li>The specific topics or questions the senior asks about</li>
+      <li>The senior's passive background location (only the location at the moment of an SOS alert is shared)</li>
+    </ul>
+    <p>Family connections are established through an explicit account-linking process. To remove a linked family member, contact us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a> and we will process the removal within 7 business days.</p>
+  </section>
+
+  <!-- 7. RETENTION -->
+  <section class="pp" id="retention">
+    <h2><span class="num">7.</span>Data Retention</h2>
+    <ul>
+      <li><strong>AI-generated audio files</strong> — automatically deleted after 180 days, for all users</li>
+      <li><strong>Conversation history and summaries</strong> — retained while your account is active</li>
+      <li><strong>SOS event logs</strong> — retained while your account is active</li>
+      <li><strong>Engagement and activity data</strong> — retained while your account is active</li>
+      <li><strong>Account and profile data</strong> — retained until you request deletion</li>
+    </ul>
+    <p>When you request account deletion, we will delete or permanently anonymize your personal data within 30 days, except where we are required by law to retain certain records longer. You can request deletion at any time — see our <a href="https://peininfoundation.org/delete-account.html">Delete Account</a> page.</p>
+  </section>
+
+  <!-- 8. SECURITY -->
+  <section class="pp" id="security">
+    <h2><span class="num">8.</span>Data Security</h2>
+    <ul>
+      <li>All data is transmitted over encrypted connections (HTTPS/TLS).</li>
+      <li>Database access requires authentication and role-based access controls.</li>
+      <li>Audio files are accessible only through time-limited, cryptographically signed URLs that expire automatically.</li>
+      <li>Internal service-to-service communication uses shared secret key authentication.</li>
+    </ul>
+    <p>No method of electronic storage or transmission is completely secure. If you believe your account has been compromised, contact us immediately at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>.</p>
+  </section>
+
+  <!-- 9. RIGHTS -->
+  <section class="pp" id="rights">
+    <h2><span class="num">9.</span>Your Rights &amp; Choices</h2>
+    <p><strong>Access.</strong> You may request a copy of the personal information we hold about you.</p>
+    <p><strong>Correction.</strong> You may update your name, language, and interests in the app at any time.</p>
+    <p><strong>Deletion.</strong> You may request deletion of your account and all associated data at any time via our <a href="https://peininfoundation.org/delete-account.html">Delete Account</a> page. Deleted conversation history cannot be recovered.</p>
+    <p><strong>Location Sharing.</strong> You may withdraw location permission at any time through your device settings. This does not affect SOS functionality.</p>
+    <p><strong>Push Notifications.</strong> You may disable notifications through your device settings, though this will prevent delivery of reminders and safety alerts.</p>
+  </section>
+
+  <!-- 10. CCPA -->
+  <section class="pp" id="ccpa">
+    <h2><span class="num">10.</span>California Privacy Rights (CCPA)</h2>
+    <p>If you are a California resident, you have the right to know what personal information we collect, to request its deletion, and to non-discrimination for exercising your rights. <strong>PéiNín Foundation does not sell personal information</strong>, so no opt-out of sale is needed.</p>
+    <p>To submit a request, email <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a> with the subject "California Privacy Rights Request." We will respond within 45 days and may ask you to verify your identity.</p>
+  </section>
+
+  <!-- 11. CHILDREN -->
+  <section class="pp" id="children">
+    <h2><span class="num">11.</span>Children's Privacy</h2>
+    <p>The PéiNín app is designed for adults. We do not knowingly collect personal information from anyone under the age of 13. If you believe a child under 13 has provided personal information, contact us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a> and we will delete it promptly.</p>
+  </section>
+
+  <!-- 12. MEDICAL -->
+  <section class="pp" id="medical">
+    <h2><span class="num">12.</span>PéiNín Is Not a Medical Service</h2>
+    <p>PéiNín is a companion app, not a medical device, clinical service, or healthcare provider. Nothing in the app constitutes medical advice, diagnosis, or treatment. If you or a family member have a medical emergency, contact 911 or your local emergency services directly. The SOS feature notifies family contacts and is not a substitute for emergency medical services.</p>
+    <p>PéiNín Foundation is not a covered entity under HIPAA and does not represent itself as providing HIPAA-compliant services.</p>
+  </section>
+
+  <!-- 13. CHANGES -->
+  <section class="pp" id="changes">
+    <h2><span class="num">13.</span>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy as the app evolves or as legal requirements change. When we make material changes, we will post the updated policy at <a href="https://peininfoundation.org/privacy.html">peininfoundation.org/privacy.html</a> with a new "Last Updated" date, and provide an in-app notice when the changes are significant.</p>
+    <p><strong>Recent change:</strong> Our third-party service providers are now identified by name in Section 2 ("Third-Party Services").</p>
+  </section>
+
+  <!-- 14. CONTACT -->
+  <section class="pp" id="contact">
+    <h2><span class="num">14.</span>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or our data practices, please reach out:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a></li>
+      <li><strong>Website:</strong> <a href="https://peininfoundation.org">peininfoundation.org</a></li>
+      <li><strong>Organization:</strong> PéiNín Foundation · 501(c)(3) nonprofit · EIN 42-2179578</li>
+      <li><strong>Location:</strong> San Francisco Bay Area, California</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <div class="fbrand">陪您 · PéiNín</div>
+  <div class="flinks">
+    <a href="https://peininfoundation.org">首頁 · Home</a>
+    <a href="https://peininfoundation.org/support.html">支援 · Support</a>
+    <a href="https://peininfoundation.org/terms.html">服務條款 · Terms</a>
+    <a href="https://peininfoundation.org/delete-account.html">刪除帳戶 · Delete Account</a>
+    <a href="mailto:info@peininfoundation.org">聯絡 · Contact</a>
   </div>
-  <div class="divider"></div>
-
-  <!-- CONTENT -->
-  <div class="content">
-
-    <!-- TABLE OF CONTENTS -->
-    <div class="toc">
-      <h2>Table of Contents</h2>
-      <ol>
-        <li><a href="#s1">Introduction</a></li>
-        <li><a href="#s2">Information We Collect</a></li>
-        <li><a href="#s3">How We Use Your Information</a></li>
-        <li><a href="#s4">Voice Data and AI Conversations</a></li>
-        <li><a href="#s5">Location Data</a></li>
-        <li><a href="#s6">How We Share Your Information</a></li>
-        <li><a href="#s7">Data Security</a></li>
-        <li><a href="#s8">Data Retention</a></li>
-        <li><a href="#s9">Children's Privacy</a></li>
-        <li><a href="#s10">Your Rights</a></li>
-        <li><a href="#s11">California Privacy Rights (CCPA)</a></li>
-        <li><a href="#s12">Third-Party Services</a></li>
-        <li><a href="#s13">Changes to This Privacy Policy</a></li>
-        <li><a href="#s14">Contact Us</a></li>
-      </ol>
-    </div>
-
-    <!-- SECTION 1 -->
-    <div class="policy-section" id="s1">
-      <span class="section-num">Section 1</span>
-      <h2>Introduction</h2>
-      <p>Pei Nin Foundation ("we", "us", or "our") operates the PéiNín (陪您) mobile application (the "App"). We are committed to protecting the privacy and dignity of our users, particularly Chinese-speaking seniors in the United States.</p>
-      <p>This Privacy Policy explains what information we collect, how we use it, and your rights regarding your personal information. By using the App, you agree to the practices described in this policy.</p>
-    </div>
-
-    <!-- SECTION 2 -->
-    <div class="policy-section" id="s2">
-      <span class="section-num">Section 2</span>
-      <h2>Information We Collect</h2>
-      <h3>2.1 Information You Provide</h3>
-      <ul>
-        <li>Name, age, and preferred language (Mandarin or Cantonese)</li>
-        <li>Emergency contact information (family member name and phone number)</li>
-        <li>Account credentials (email and password, managed by your family member)</li>
-        <li>Voice recordings during conversations with the AI companion</li>
-        <li>Text messages and conversation history</li>
-      </ul>
-      <h3>2.2 Information Collected Automatically</h3>
-      <ul>
-        <li>Device type and operating system</li>
-        <li>App usage data (features used, session duration)</li>
-        <li>GPS location data (only when location sharing is enabled by the user or family)</li>
-        <li>Log data and error reports</li>
-      </ul>
-      <h3>2.3 Information We Do Not Collect</h3>
-      <ul>
-        <li>We do not collect Social Security numbers or government ID numbers</li>
-        <li>We do not collect financial or payment information directly (payments processed by third-party providers)</li>
-        <li>We do not sell your personal information to third parties</li>
-      </ul>
-    </div>
-
-    <!-- SECTION 3 -->
-    <div class="policy-section" id="s3">
-      <span class="section-num">Section 3</span>
-      <h2>How We Use Your Information</h2>
-      <p>We use the information we collect to:</p>
-      <ul>
-        <li>Provide AI-powered voice companionship in Mandarin and Cantonese</li>
-        <li>Send emergency SOS alerts to designated family members</li>
-        <li>Share GPS location with designated family members when enabled</li>
-        <li>Remember conversation history to provide personalized companionship</li>
-        <li>Send daily reminders and wellness check-ins</li>
-        <li>Improve the App and our services</li>
-        <li>Comply with legal obligations</li>
-      </ul>
-    </div>
-
-    <!-- SECTION 4 -->
-    <div class="policy-section" id="s4">
-      <span class="section-num">Section 4</span>
-      <h2>Voice Data and AI Conversations</h2>
-      <p>Voice recordings are processed to enable natural language conversation with our AI companion. We use trusted third-party AI service providers to process voice and text data. These providers are required to handle your data securely and are prohibited from using your data for their own purposes.</p>
-      <p>Conversation history is stored securely and is accessible only to the senior user and their designated family members. We do not use your conversations to train AI models without your explicit consent.</p>
-    </div>
-
-    <!-- SECTION 5 -->
-    <div class="policy-section" id="s5">
-      <span class="section-num">Section 5</span>
-      <h2>Location Data</h2>
-      <p>GPS location data is only collected when location sharing is explicitly enabled by the user or their designated family member. Location data is shared only with designated family members and is never sold or shared with third parties. You may disable location sharing at any time in the App settings.</p>
-    </div>
-
-    <!-- SECTION 6 -->
-    <div class="policy-section" id="s6">
-      <span class="section-num">Section 6</span>
-      <h2>How We Share Your Information</h2>
-      <p>We do not sell your personal information. We may share your information in the following limited circumstances:</p>
-      <ul>
-        <li>With designated family members as authorized by the user</li>
-        <li>With trusted service providers who help us operate the App (AI processing, cloud storage, SMS services)</li>
-        <li>When required by law or to protect the safety of our users</li>
-        <li>In the event of a merger or acquisition, with appropriate notice to users</li>
-      </ul>
-    </div>
-
-    <!-- SECTION 7 -->
-    <div class="policy-section" id="s7">
-      <span class="section-num">Section 7</span>
-      <h2>Data Security</h2>
-      <p>We implement industry-standard security measures to protect your information, including encryption of data in transit and at rest. However, no method of transmission over the internet is 100% secure. We encourage you to use strong passwords and to contact us immediately if you suspect unauthorized access to your account.</p>
-    </div>
-
-    <!-- SECTION 8 -->
-    <div class="policy-section" id="s8">
-      <span class="section-num">Section 8</span>
-      <h2>Data Retention</h2>
-      <p>We retain your personal information for as long as your account is active or as needed to provide our services. You may request deletion of your account and associated data at any time by contacting us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>. We will delete your data within 30 days of your request, except where retention is required by law.</p>
-    </div>
-
-    <!-- SECTION 9 -->
-    <div class="policy-section" id="s9">
-      <span class="section-num">Section 9</span>
-      <h2>Children's Privacy</h2>
-      <p>The PéiNín App is designed for adults aged 60 and older. We do not knowingly collect personal information from children under the age of 13. If you believe we have collected information from a minor, please contact us immediately.</p>
-    </div>
-
-    <!-- SECTION 10 -->
-    <div class="policy-section" id="s10">
-      <span class="section-num">Section 10</span>
-      <h2>Your Rights</h2>
-      <p>Depending on your location, you may have the following rights regarding your personal information:</p>
-      <ul>
-        <li><strong>Right to access</strong> — you may request a copy of the personal information we hold about you</li>
-        <li><strong>Right to correction</strong> — you may request correction of inaccurate information</li>
-        <li><strong>Right to deletion</strong> — you may request deletion of your personal information</li>
-        <li><strong>Right to opt-out</strong> — you may opt out of certain data processing activities</li>
-      </ul>
-      <p>To exercise these rights, please contact us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>.</p>
-    </div>
-
-    <!-- SECTION 11 -->
-    <div class="policy-section" id="s11">
-      <span class="section-num">Section 11</span>
-      <h2>California Privacy Rights (CCPA)</h2>
-      <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA), including the right to know what personal information we collect, the right to delete your personal information, and the right to opt out of the sale of your personal information. We do not sell personal information. To exercise your California privacy rights, contact us at <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a>.</p>
-    </div>
-
-    <!-- SECTION 12 -->
-    <div class="policy-section" id="s12">
-      <span class="section-num">Section 12</span>
-      <h2>Third-Party Services</h2>
-      <p>The App uses the following third-party services to operate:</p>
-      <ul>
-        <li><strong>AI language processing services</strong> — for Mandarin and Cantonese voice conversation</li>
-        <li><strong>Cloud storage services</strong> — for secure data storage</li>
-        <li><strong>SMS services</strong> — for emergency SOS alerts to family members</li>
-        <li><strong>Payment processors</strong> — for subscription management</li>
-      </ul>
-      <p>Each of these services has their own privacy policies. We select partners who meet high standards for data security and privacy.</p>
-    </div>
-
-    <!-- SECTION 13 -->
-    <div class="policy-section" id="s13">
-      <span class="section-num">Section 13</span>
-      <h2>Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by sending an email to your registered email address or by displaying a prominent notice in the App. Your continued use of the App after changes take effect constitutes your acceptance of the updated policy.</p>
-    </div>
-
-    <!-- SECTION 14 -->
-    <div class="policy-section" id="s14">
-      <span class="section-num">Section 14</span>
-      <h2>Contact Us</h2>
-      <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us. We are committed to responding to all privacy inquiries within 30 days.</p>
-      <div class="contact-box">
-        <p>📧 <strong>Email:</strong> <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a></p>
-        <p>🌐 <strong>Website:</strong> <a href="https://peininfoundation.org">peininfoundation.org</a></p>
-        <p>📍 <strong>Mailing Address:</strong> Pei Nin Foundation, Daly City, CA</p>
-      </div>
-    </div>
-
+  <div class="fmeta">
+    PéiNín - AI Companion for Seniors · an app by PéiNín Foundation<br>
+    © 2026 陪您基金會 PéiNín Foundation · A California Nonprofit Corporation<br>
+    501(c)(3) Approved · EIN: 42-2179578 · San Francisco Bay Area, CA
   </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 陪您基金會 PéiNín Foundation &nbsp;·&nbsp; A California Nonprofit Corporation &nbsp;·&nbsp; 501(c)(3) Approved · EIN: 42-2179578</p>
-    <p style="margin-top:.3rem"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a></p>
-  </footer>
+</footer>
 
 </body>
 </html>
