@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Download PéiNín - AI Companion for Seniors on the App Store or Google Play.">
+<title>下載陪您 · Download PéiNín</title>
+<style>
+  :root{--ink:#1F1B16;--red:#A72626;--gold:#C49B59;--cream:#FBF6EE;--cream-2:#F4EADB;--paper:#FFFFFF;--muted:#6E6357;--line:#E9DDC9}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:44px 32px;max-width:420px;width:100%;text-align:center;box-shadow:0 8px 40px rgba(120,90,40,.1)}
+  .logo{width:72px;height:72px;border-radius:18px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;margin:0 auto 18px;font-family:"Noto Serif TC",serif}
+  h1{font-size:26px;font-weight:800;letter-spacing:1px;margin-bottom:4px}
+  .sub{font-size:14px;color:var(--gold);font-weight:600;letter-spacing:1px;margin-bottom:8px}
+  .app-name{font-size:13px;color:var(--muted);margin-bottom:28px}
+  .app-name strong{color:var(--ink)}
+  .badges{display:flex;flex-direction:column;gap:14px}
+  .badge{display:flex;align-items:center;gap:12px;justify-content:center;background:var(--ink);color:#fff;padding:15px 24px;border-radius:12px;text-decoration:none;transition:transform .15s,background .2s}
+  .badge:hover{transform:translateY(-2px);background:#2a1d0c}
+  .badge svg{width:28px;height:28px;flex-shrink:0}
+  .badge .t{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .badge .t .s{font-size:.66rem;opacity:.8}
+  .badge .t .b{font-size:1.05rem;font-weight:700}
+  .foot{margin-top:28px;font-size:12px;color:var(--muted);line-height:1.7}
+  .foot a{color:var(--red);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">陪</div>
+    <h1>下載陪您</h1>
+    <div class="sub">Download PéiNín</div>
+    <div class="app-name"><strong>PéiNín - AI Companion for Seniors</strong></div>
+
+    <div class="badges">
+      <a class="badge" href="https://apps.apple.com/us/app/pei-nin/id6795647478">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.02-3.76-2.05-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.4-.02 2.28-1.27 3.13-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.72-1.04-2.75-4.13zM14.53 4.42c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+        <span class="t"><span class="s">Download on the</span><span class="b">App Store</span></span>
+      </a>
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.mycompany.peinin">
+        <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.3l-.1.1z"/><path fill="#FBBC04" d="M16.1 15.2 13 12.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1z"/><path fill="#4285F4" d="m16.2 15.1-3.2-3.2L3.6 21.6c.4.4 1 .4 1.7 0l10.9-6.5z"/><path fill="#34A853" d="M16.2 8.9 5.3 2.4c-.7-.4-1.3-.4-1.7 0l9.4 9.4 3.2-3.2z"/></svg>
+        <span class="t"><span class="s">GET IT ON</span><span class="b">Google Play</span></span>
+      </a>
+    </div>
+
+    <div class="foot">
+      由陪您基金會打造 · A nonprofit app · 免費下載<br>
+      <a href="https://peininfoundation.org">peininfoundation.org</a>
+    </div>
+  </div>
+
+  <script>
+    // Auto-redirect based on device — optional convenience
+    (function(){
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      var isAndroid = /android/i.test(ua);
+      // We do NOT auto-redirect immediately — we let the user see both buttons.
+      // If you prefer auto-redirect, uncomment below:
+      // if (isIOS) window.location.href = "https://apps.apple.com/us/app/pei-nin/id6795647478";
+      // else if (isAndroid) window.location.href = "https://play.google.com/store/apps/details?id=com.mycompany.peinin";
+    })();
+  </script>
+</body>
+</html>
