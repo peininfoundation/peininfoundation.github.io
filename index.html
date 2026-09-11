@@ -46,6 +46,17 @@
     .btn-primary:hover{background:var(--red-light);transform:translateY(-1px)}
     .btn-secondary{border:1.5px solid var(--gold);color:var(--gold);padding:.9rem 2.2rem;border-radius:2px;font-size:.9rem;font-weight:600;letter-spacing:.06em;text-decoration:none;transition:all .2s;font-family:'Noto Serif TC',serif;display:inline-block}
     .btn-secondary:hover{background:var(--gold);color:var(--white)}
+
+    /* STORE BADGES */
+    .now-available{display:inline-flex;align-items:center;gap:.6rem;background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.35);color:#1e8449;padding:.4rem 1rem;border-radius:100px;font-size:.78rem;font-weight:700;letter-spacing:.04em;margin-bottom:1.6rem}
+    .now-available .dot{width:8px;height:8px;border-radius:50%;background:#27AE60;display:inline-block}
+    .store-badges{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.6rem}
+    .store-badge{display:inline-flex;align-items:center;gap:.7rem;background:var(--ink);color:var(--white);padding:.7rem 1.3rem;border-radius:8px;text-decoration:none;transition:transform .15s,background .2s}
+    .store-badge:hover{transform:translateY(-2px);background:#2a1d0c}
+    .store-badge svg{width:26px;height:26px;flex-shrink:0}
+    .store-badge .sb-text{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+    .store-badge .sb-small{font-size:.62rem;letter-spacing:.04em;opacity:.8;font-family:-apple-system,sans-serif}
+    .store-badge .sb-big{font-size:1rem;font-weight:700;font-family:-apple-system,sans-serif;letter-spacing:.02em}
     .hero-photo{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:clamp(240px,28vw,400px);height:clamp(300px,36vw,500px);object-fit:cover;border-radius:2px;z-index:2;box-shadow:0 24px 64px rgba(0,0,0,.15);border:6px solid var(--white);outline:1px solid rgba(201,151,58,.25)}
 
     /* DIVIDER */
@@ -240,6 +251,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-eyebrow fade-up">陪您基金會 · PéiNín Foundation · 加州非牟利機構 · 501(c)(3) 已批准</div>
+      <div class="fade-up" style="transition-delay:.06s"><span class="now-available"><span class="dot"></span>現已上線 · Now Available on App Store &amp; Google Play</span></div>
       <h1 class="fade-up" style="transition-delay:.1s">讓長輩<br/><em>不再孤單</em></h1>
       <p class="hero-subtitle fade-up" style="transition-delay:.18s">No More Isolation for Our Elders</p>
       <p class="hero-desc fade-up" style="transition-delay:.26s">
@@ -264,6 +276,16 @@
       <div class="hero-actions fade-up" style="transition-delay:.38s">
         <a class="btn-primary" href="mailto:info@peininfoundation.org">聯絡我們 · Contact Us</a>
         <a class="btn-secondary" href="#mission">了解使命 · Our Mission</a>
+      </div>
+      <div class="store-badges fade-up" style="transition-delay:.44s">
+        <a class="store-badge" href="https://apps.apple.com/app/peinin" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.02-3.76-2.05-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.4-.02 2.28-1.27 3.13-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.72-1.04-2.75-4.13zM14.53 4.42c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+          <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
+        </a>
+        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mycompany.peinin" aria-label="Get it on Google Play">
+          <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.3l-.1.1z"/><path fill="#FBBC04" d="M16.1 15.2 13 12.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1z"/><path fill="#4285F4" d="m16.2 15.1-3.2-3.2L3.6 21.6c.4.4 1 .4 1.7 0l10.9-6.5z"/><path fill="#34A853" d="M16.2 8.9 5.3 2.4c-.7-.4-1.3-.4-1.7 0l9.4 9.4 3.2-3.2z"/></svg>
+          <span class="sb-text"><span class="sb-small">GET IT ON</span><span class="sb-big">Google Play</span></span>
+        </a>
       </div>
     </div>
     <img class="hero-photo fade-up" src="hero.jpg" alt="Chinese American senior woman smiling warmly" style="transition-delay:.45s" />
@@ -633,6 +655,19 @@
       <div class="fade-up" style="transition-delay:.2s;margin-top:3rem">
         <a class="btn-primary" href="mailto:info@peininfoundation.org" style="font-size:1rem;padding:1.1rem 3rem">發送電郵 · Send Us an Email</a>
       </div>
+      <div class="fade-up" style="transition-delay:.28s;margin-top:2rem">
+        <p style="color:rgba(255,255,255,.5);font-size:.82rem;letter-spacing:.06em;margin-bottom:1.2rem;text-transform:uppercase">立即下載陪您 · Download PéiNín Today</p>
+        <div class="store-badges" style="justify-content:center">
+          <a class="store-badge" href="https://apps.apple.com/app/peinin" aria-label="Download on the App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.02-3.76-2.05-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.4-.02 2.28-1.27 3.13-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.72-1.04-2.75-4.13zM14.53 4.42c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+            <span class="sb-text"><span class="sb-small">Download on the</span><span class="sb-big">App Store</span></span>
+          </a>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mycompany.peinin" aria-label="Get it on Google Play">
+            <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.3l-.1.1z"/><path fill="#FBBC04" d="M16.1 15.2 13 12.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1z"/><path fill="#4285F4" d="m16.2 15.1-3.2-3.2L3.6 21.6c.4.4 1 .4 1.7 0l10.9-6.5z"/><path fill="#34A853" d="M16.2 8.9 5.3 2.4c-.7-.4-1.3-.4-1.7 0l9.4 9.4 3.2-3.2z"/></svg>
+            <span class="sb-text"><span class="sb-small">GET IT ON</span><span class="sb-big">Google Play</span></span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -641,7 +676,7 @@
     <p>© 2026 陪您基金會 PéiNín Foundation &nbsp;·&nbsp; A California Nonprofit Corporation &nbsp;·&nbsp; 501(c)(3) Approved · EIN: 42-2179578</p>
     <p style="margin-top:.3rem;font-style:italic">以心為本的科技，以您的語言送上關懷。&nbsp;·&nbsp; Technology with heart. Care in your language.</p>
     <p style="margin-top:.3rem"><a href="mailto:info@peininfoundation.org">info@peininfoundation.org</a> &nbsp;·&nbsp; San Francisco Bay Area, CA</p>
-    <p style="margin-top:.3rem"><a href="support.html">支援 · Support</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></p>
+    <p style="margin-top:.3rem"><a href="support.html">支援 · Support</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="delete-account.html">刪除帳戶 · Delete Account</a></p>
   </footer>
 
   <script>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to use PéiNín — a simple step-by-step guide for seniors and their families. Set up in minutes, then just talk.">
+<title>使用教學 · How to Use — PéiNín - AI Companion for Seniors</title>
+<style>
+  :root{
+    --ink:#1F1B16; --red:#A72626; --red-soft:#C0392B; --gold:#C49B59;
+    --cream:#FBF6EE; --cream-2:#F4EADB; --paper:#FFFFFF; --muted:#6E6357;
+    --line:#E9DDC9; --green:#0F6E56;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.75;-webkit-font-smoothing:antialiased}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,238,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;flex-direction:column;line-height:1.15;text-decoration:none;color:var(--ink)}
+  .brand .zh{font-weight:700;font-size:20px;letter-spacing:1px}
+  .brand .en{font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:600}
+  .nav-back{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+  .nav-back:hover{color:var(--red)}
+
+  .hero{background:linear-gradient(160deg,var(--cream) 0%,var(--cream-2) 100%);padding:56px 24px 44px;text-align:center;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{display:inline-block;font-size:12px;letter-spacing:2px;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+  .hero h1{font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:1px;margin-bottom:8px}
+  .hero .sub-en{font-size:15px;letter-spacing:1px;color:var(--gold);font-weight:600;margin-bottom:18px}
+  .hero p{max-width:560px;margin:0 auto;font-size:17px;color:var(--muted)}
+
+  .wrap{max-width:820px;margin:0 auto;padding:48px 24px 24px}
+
+  /* audience tabs */
+  .audience{display:flex;gap:12px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+  .aud-card{flex:1;min-width:240px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;transition:border-color .2s,transform .15s}
+  .aud-card:hover{border-color:var(--red);transform:translateY(-2px)}
+  .aud-card .ic{font-size:28px;margin-bottom:8px;display:block}
+  .aud-card h3{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:4px}
+  .aud-card p{font-size:14px;color:var(--muted)}
+
+  .section-head{text-align:center;margin:48px 0 32px}
+  .section-head .tag{display:inline-block;font-size:12px;letter-spacing:2px;font-weight:700;color:var(--red);text-transform:uppercase;border-top:2px solid var(--red);padding-top:8px;margin-bottom:12px}
+  .section-head h2{font-size:clamp(22px,4vw,30px);font-weight:800;letter-spacing:.5px}
+  .section-head p{font-size:15px;color:var(--muted);max-width:520px;margin:8px auto 0}
+
+  /* steps */
+  .step-row{display:flex;gap:24px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 26px;margin-bottom:20px;box-shadow:0 1px 3px rgba(120,90,40,0.04)}
+  .step-num{flex-shrink:0;width:52px;height:52px;border-radius:50%;background:var(--red);color:#fff;font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:-apple-system,sans-serif}
+  .step-body{flex:1}
+  .step-body h3{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:2px}
+  .step-body .h-en{font-size:13.5px;color:var(--gold);font-weight:600;margin-bottom:8px}
+  .step-body p{font-size:15.5px;color:var(--muted);margin-bottom:6px}
+  .step-body p:last-child{margin-bottom:0}
+  .step-body strong{color:var(--ink)}
+
+  /* phone illustration inside senior steps */
+  .phone-mini{flex-shrink:0;width:120px;background:#fff;border:2px solid var(--line);border-radius:18px;padding:14px 10px;text-align:center}
+  .phone-mini .cat{font-size:40px;line-height:1}
+  .phone-mini .cat-ring{width:76px;height:76px;margin:0 auto;border-radius:50%;background:#EEEDFE;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;position:relative}
+  .phone-mini .mic{position:absolute;bottom:2px;right:2px;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;border:2px solid #fff}
+  .phone-mini .say{font-size:12px;color:var(--red);font-weight:700;margin-top:8px}
+  @media(max-width:560px){.phone-mini{display:none}}
+
+  .tip{background:var(--cream-2);border-radius:12px;padding:16px 20px;margin:20px 0;font-size:15px;color:var(--ink)}
+  .tip strong{color:var(--red)}
+
+  .divider-lg{height:1px;background:var(--line);margin:8px 0}
+
+  /* video placeholder */
+  .video-box{background:var(--ink);border-radius:16px;padding:48px 24px;text-align:center;margin:24px 0}
+  .video-box .play{width:70px;height:70px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .video-box .play svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+  .video-box h3{color:#fff;font-size:19px;font-weight:700;margin-bottom:6px}
+  .video-box p{color:rgba(255,255,255,.6);font-size:14px}
+
+  .cta{text-align:center;padding:48px 24px 8px}
+  .cta h2{font-size:24px;font-weight:800;margin-bottom:20px}
+  .store-badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .store-badge{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;transition:transform .15s}
+  .store-badge:hover{transform:translateY(-2px)}
+  .store-badge svg{width:26px;height:26px}
+  .store-badge .t{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .store-badge .t .s{font-size:.62rem;opacity:.8}
+  .store-badge .t .b{font-size:1rem;font-weight:700}
+
+  footer{background:var(--ink);color:#E8DDC9;text-align:center;padding:36px 24px;margin-top:40px}
+  footer .fbrand{font-size:18px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+  footer .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:13px;margin:16px 0}
+  footer .flinks a{color:#E8DDC9;text-decoration:none;opacity:.8}
+  footer .flinks a:hover{opacity:1;color:var(--gold)}
+  footer .fmeta{font-size:12px;color:#9C8E78;line-height:1.8}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://peininfoundation.org">
+      <span class="zh">陪您</span>
+      <span class="en">PÉINÍN FOUNDATION</span>
+    </a>
+    <a class="nav-back" href="https://peininfoundation.org">← 返回首頁 · Home</a>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">How to Use PéiNín</span>
+  <h1>如何使用陪您</h1>
+  <div class="sub-en">A Simple Guide — Set Up in Minutes, Then Just Talk</div>
+  <p>陪您非常容易上手。子女花幾分鐘完成設定，之後長輩只要開口說話就好。<br>
+  <span style="font-size:14px">Set up takes a few minutes. After that, your parent simply talks.</span></p>
+</section>
+
+<div class="wrap">
+
+  <!-- audience jump -->
+  <div class="audience">
+    <a class="aud-card" href="#senior">
+      <span class="ic">👵</span>
+      <h3>給長輩 · For Seniors</h3>
+      <p>每天怎麼跟陪您聊天 · How your parent uses it daily</p>
+    </a>
+    <a class="aud-card" href="#family">
+      <span class="ic">👨‍👩‍👧</span>
+      <h3>給家人 · For Family</h3>
+      <p>怎麼設定和照顧 · How you set up and stay connected</p>
+    </a>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-box">
+    <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <h3>觀看教學影片 · Watch the Tutorial</h3>
+    <p>1 分鐘看懂如何使用陪您 · A 1-minute guide to getting started</p>
+  </div>
+
+  <!-- FOR FAMILY (setup first) -->
+  <div class="section-head" id="family">
+    <span class="tag">For Family · 給家人</span>
+    <h2>第一部分：設定（由子女完成）</h2>
+    <p>Part 1: Setup — done once by an adult child, in just a few minutes.</p>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>下載陪您</h3>
+      <div class="h-en">Download PéiNín</div>
+      <p>在您父母的手機上，從 <strong>App Store</strong> 或 <strong>Google Play</strong> 下載陪您。搜尋「陪您 PéiNín」即可。</p>
+      <p>On your parent's phone, download PéiNín from the App Store or Google Play. Search "PéiNín."</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>建立長輩的個人檔案</h3>
+      <div class="h-en">Set up your parent's profile</div>
+      <p>回答幾個簡單問題：<strong>怎麼稱呼他們、選擇語言（國語 / 廣東話 / 英語）、AI 的語氣和聲音、還有他們感興趣的話題</strong>。這些讓陪您更懂您的父母。</p>
+      <p>Answer a few simple questions — their name, language, the companion's tone and voice, and topics they enjoy.</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>設定緊急聯絡人</h3>
+      <div class="h-en">Add an emergency contact</div>
+      <p>填上一位家人的<strong>姓名和電話</strong>。當長輩按下 SOS，這位家人會立刻收到通知和位置。</p>
+      <p>Add a family member's name and phone. When your parent presses SOS, this person is alerted instantly with their location.</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>設定提醒（選擇性）</h3>
+      <div class="h-en">Add reminders (optional)</div>
+      <p>為長輩加上<strong>吃藥、看醫生</strong>等提醒。您和長輩都可以隨時新增或修改。如果提醒沒被確認，您會收到通知。</p>
+      <p>Add reminders for medication or appointments. Both you and your parent can manage them anytime.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>完成後</strong>，把手機交給您的父母就好。他們不需要記住任何設定 —— 剩下的就是開口說話。<br>
+    <span style="font-size:14px;color:var(--muted)">Once setup is done, hand the phone to your parent. They don't need to remember anything — they just talk.</span>
+  </div>
+
+  <!-- FOR SENIORS -->
+  <div class="section-head" id="senior">
+    <span class="tag">For Seniors · 給長輩</span>
+    <h2>第二部分：每天怎麼用</h2>
+    <p>Part 2: Daily use — this is all your parent ever needs to do.</p>
+  </div>
+
+  <div class="step-row">
+    <div class="phone-mini">
+      <div class="cat-ring">
+        <span class="cat">🐱</span>
+        <span class="mic">🎤</span>
+      </div>
+      <div class="say">按這裡說話</div>
+    </div>
+    <div class="step-body">
+      <h3>按一下，就開始說話</h3>
+      <div class="h-en">Tap once, and just talk</div>
+      <p>打開陪您，會看到一隻可愛的貓咪。<strong>按一下貓咪</strong>，就可以開始說話 —— 問問題、聊天、說說今天的心情。</p>
+      <p>Open PéiNín and you'll see a friendly cat. Tap it, and start talking — ask anything, or just chat.</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">💬</div>
+    <div class="step-body">
+      <h3>用您的語言，自然對話</h3>
+      <div class="h-en">Talk naturally, in your language</div>
+      <p>用<strong>國語或廣東話</strong>自然說話就好，就像跟朋友聊天。陪您聽得懂，也會用同樣的語言回答，還會記得您說過的事。</p>
+      <p>Speak naturally in Mandarin or Cantonese. PéiNín understands, replies in your language, and remembers what you share.</p>
+    </div>
+  </div>
+
+  <div class="step-row">
+    <div class="step-num">🚨</div>
+    <div class="step-body">
+      <h3>需要幫忙時，按 SOS</h3>
+      <div class="h-en">Press SOS if you need help</div>
+      <p>如果發生緊急情況，按下紅色的 <strong>SOS 按鈕</strong>，確認後，您的家人會立刻收到通知和您的位置。</p>
+      <p>In an emergency, press the red SOS button and confirm. Your family is alerted instantly with your location.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <strong>就這麼簡單。</strong>沒有選單、沒有小按鈕、沒有東西要學。想聊天的時候，按一下貓咪就好。<br>
+    <span style="font-size:14px;color:var(--muted)">That's it. No menus, no small buttons, nothing to learn. Whenever they want to talk, they tap the cat.</span>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>準備好了嗎？立即下載陪您</h2>
+    <div class="store-badges">
+      <a class="store-badge" href="https://apps.apple.com/app/peinin">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.09-2.02-3.76-2.05-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.4-.02 2.28-1.27 3.13-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.72-1.04-2.75-4.13zM14.53 4.42c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+        <span class="t"><span class="s">Download on the</span><span class="b">App Store</span></span>
+      </a>
+      <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.mycompany.peinin">
+        <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M3.6 2.4c-.3.3-.5.7-.5 1.3v16.6c0 .6.2 1 .5 1.3l.1.1L13 12.1v-.2L3.7 2.3l-.1.1z"/><path fill="#FBBC04" d="M16.1 15.2 13 12.1v-.2l3.1-3.1.1.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2l-3.7 2.1-.1-.1z"/><path fill="#4285F4" d="m16.2 15.1-3.2-3.2L3.6 21.6c.4.4 1 .4 1.7 0l10.9-6.5z"/><path fill="#34A853" d="M16.2 8.9 5.3 2.4c-.7-.4-1.3-.4-1.7 0l9.4 9.4 3.2-3.2z"/></svg>
+        <span class="t"><span class="s">GET IT ON</span><span class="b">Google Play</span></span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fbrand">陪您 · PéiNín</div>
+  <div class="flinks">
+    <a href="https://peininfoundation.org">首頁 · Home</a>
+    <a href="https://peininfoundation.org/support.html">支援 · Support</a>
+    <a href="https://peininfoundation.org/privacy.html">隱私政策 · Privacy</a>
+    <a href="mailto:info@peininfoundation.org">聯絡 · Contact</a>
+  </div>
+  <div class="fmeta">
+    PéiNín - AI Companion for Seniors · an app by PéiNín Foundation<br>
+    © 2026 陪您基金會 PéiNín Foundation · 501(c)(3) · EIN: 42-2179578
+  </div>
+</footer>
+
+</body>
+</html>
